@@ -17,8 +17,8 @@ export interface DedupeResult {
   duplicates: ValidatedNewArticle[];
 }
 
-function titleKey(normalizedTitle: string, sourceName: string): string {
-  return `${normalizedTitle}::${sourceName.toLowerCase().trim()}`;
+function titleKey(normalizedTitle: string): string {
+  return normalizedTitle;
 }
 
 export function deduplicate(
@@ -29,7 +29,7 @@ export function deduplicate(
 
   const seenTitles = new Map<string, number[]>();
   for (const item of existing) {
-    const key = titleKey(item.normalizedTitle, item.sourceName);
+    const key = titleKey(item.normalizedTitle);
     const timestamps = seenTitles.get(key) ?? [];
     timestamps.push(new Date(item.publishedAt).getTime());
     seenTitles.set(key, timestamps);
@@ -44,7 +44,7 @@ export function deduplicate(
       continue;
     }
 
-    const key = titleKey(candidate.normalizedTitle, candidate.sourceName);
+    const key = titleKey(candidate.normalizedTitle);
     const publishedAt = new Date(candidate.publishedAt).getTime();
     const timestamps = seenTitles.get(key) ?? [];
 

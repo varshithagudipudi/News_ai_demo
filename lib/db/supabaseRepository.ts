@@ -1,6 +1,15 @@
 import 'server-only';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { requireEnv } from '@/lib/config/env';
+
+// Node < 22 has no native WebSocket, but @supabase/supabase-js's Realtime
+// client requires the global to exist even though this app never uses
+// Realtime. Polyfill it so client construction doesn't throw.
+if (typeof globalThis.WebSocket === 'undefined') {
+  const { default: WebSocket } = await import('ws');
+  // @ts-expect-error -- `ws` isn't a byte-for-byte match for the lib.dom WebSocket type.
+  globalThis.WebSocket = WebSocket;
+}
 import type { Article, ArticleQuery } from '@/lib/types/article';
 import type { ValidatedNewArticle } from '@/lib/validation/article';
 import type {
