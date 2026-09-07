@@ -14,22 +14,23 @@ interface ArticleCardProps {
 
 export function ArticleCard({ article, onRemove }: ArticleCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface transition-shadow hover:shadow-md">
+    <article
+      id={`article-${article.id}`}
+      tabIndex={-1}
+      className="group flex h-full flex-col overflow-hidden border border-border bg-surface transition-colors hover:border-fg">
       <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface-muted">
         <ArticleImage
           src={article.imageUrl}
           alt={article.title}
           seed={article.id}
-          className="h-full w-full"
-        />
-        <CategoryBadge
-          slug={article.category}
-          className="absolute left-3 top-3 shadow-sm"
+          className="h-full w-full transition-transform duration-300 group-hover:scale-[1.03]"
         />
       </div>
 
-      <div className="flex flex-1 flex-col gap-3 p-4">
-        <h3 className="line-clamp-3 text-base font-semibold leading-snug text-fg">
+      <div className="flex flex-1 flex-col gap-2.5 p-4">
+        <CategoryBadge slug={article.category} />
+
+        <h3 className="line-clamp-3 text-base font-extrabold leading-snug text-fg group-hover:text-accent">
           {article.title}
         </h3>
 
@@ -39,8 +40,8 @@ export function ArticleCard({ article, onRemove }: ArticleCardProps) {
           </p>
         )}
 
-        <div className="mt-auto flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-fg-muted">
-          <span className="font-medium text-fg">{article.sourceName}</span>
+        <div className="mt-auto flex flex-wrap items-center gap-x-2 gap-y-1 text-xs uppercase tracking-wide text-fg-muted">
+          <span className="font-bold text-fg">{article.sourceName}</span>
           <span aria-hidden="true">·</span>
           <time dateTime={article.publishedAt} title={article.publishedAt}>
             {formatRelativeDate(article.publishedAt)}
@@ -55,7 +56,7 @@ export function ArticleCard({ article, onRemove }: ArticleCardProps) {
             href={article.articleUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-lg text-sm font-semibold text-accent hover:underline"
+            className="inline-flex items-center gap-1.5 text-sm font-bold text-accent hover:underline"
           >
             Read more
             <span className="sr-only"> about {article.title}</span>
@@ -77,7 +78,7 @@ export function ArticleCard({ article, onRemove }: ArticleCardProps) {
             <button
               type="button"
               onClick={() => onRemove(article.id)}
-              className="inline-flex h-9 items-center gap-1.5 rounded-lg border border-border bg-surface px-3 text-sm font-medium text-fg-muted transition-colors hover:bg-surface-muted hover:text-fg"
+              className="inline-flex h-9 items-center gap-1.5 rounded-none border border-border bg-surface px-3 text-sm font-medium text-fg-muted transition-colors hover:border-fg hover:text-fg"
             >
               <span aria-hidden="true">✕</span>
               Remove

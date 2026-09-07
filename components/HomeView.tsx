@@ -4,6 +4,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { ArticleGrid } from '@/components/ArticleGrid';
 import { CategoryNav } from '@/components/CategoryNav';
+import { CreatorDirectory } from '@/components/CreatorDirectory';
 import { FeaturedArticle } from '@/components/FeaturedArticle';
 import { Pagination } from '@/components/Pagination';
 import { SortControl } from '@/components/SortControl';
@@ -12,6 +13,7 @@ import { ErrorState } from '@/components/states/ErrorState';
 import { SkeletonGrid } from '@/components/states/SkeletonGrid';
 import { getCategoryName } from '@/lib/config/categories';
 import { siteConfig } from '@/lib/config/site';
+import { NewsTicker }from './NewsTicker';
 import type {
   Article,
   ArticleListResponse,
@@ -20,6 +22,20 @@ import type {
 } from '@/lib/types/article';
 
 type Status = 'loading' | 'ready' | 'error';
+
+const EVENTS_CATEGORY_SLUG = 'ai-events';
+const CREATORS_CATEGORY_SLUG = 'ai-content-creators';
+
+const EVENTS_WINDOW_DAYS = 30;
+
+/** [start, end) covering the trailing N days up to now. */
+function trailingWindowRange(days: number): { start: string; end: string } {
+  const end = new Date();
+  const start = new Date(end.getTime() - days * 24 * 60 * 60 * 1000);
+  return { start: start.toISOString(), end: end.toISOString() };
+}
+
+const EVENTS_WINDOW_LABEL = `Last ${EVENTS_WINDOW_DAYS} days`;
 
 /**
  * Picks a featured story: the strongest article among the newest few. Only
@@ -54,6 +70,9 @@ export function HomeView() {
   const requestId = useRef(0);
 
   useEffect(() => {
+    // The creator directory is local, static data — it has no article feed to fetch.
+    if (category === CREATORS_CATEGORY_SLUG) return;
+
     const currentRequest = ++requestId.current;
     const controller = new AbortController();
 
@@ -66,6 +85,11 @@ export function HomeView() {
       params.set('sort', sort);
       params.set('page', String(page));
       params.set('limit', String(siteConfig.defaultPageSize));
+      if (category === EVENTS_CATEGORY_SLUG) {
+        const { start, end } = trailingWindowRange(EVENTS_WINDOW_DAYS);
+        params.set('startDate', start);
+        params.set('endDate', end);
+      }
 
       try {
         const response = await fetch(`/api/articles?${params.toString()}`, {
@@ -128,72 +152,87 @@ export function HomeView() {
 
   const headingText = search
     ? `Results for “${search}”`
-    : getCategoryName(category);
+    : category === EVENTS_CATEGORY_SLUG
+      ? `${getCategoryName(category)} — ${EVENTS_WINDOW_LABEL}`
+      : getCategoryName(category);
+
+  
 
   return (
     <div className="mx-auto max-w-content px-4 py-8 sm:px-6">
+       {status === 'ready' && category !== CREATORS_CATEGORY_SLUG && (
+  <NewsTicker articles={articles} />
+)}
       <div className="mb-6">
         <CategoryNav active={category} />
       </div>
 
-      {featured && <FeaturedArticle article={featured} />}
+      {category === CREATORS_CATEGORY_SLUG ? (
+        <CreatorDirectory />
+      ) : (
+        <>
+          {featured && <FeaturedArticle article={featured} />}
 
-      <section aria-labelledby="results-heading">
-        <div className="mb-5 flex flex-wrap items-center justify-between gap-3">
-          <div>
-            <h2
-              id="results-heading"
-              className="text-lg font-semibold text-fg"
-            >
-              {headingText}
-            </h2>
-            {status === 'ready' && pagination && (
-              <p className="text-sm text-fg-muted">
-                {pagination.total}{' '}
-                {pagination.total === 1 ? 'article' : 'articles'}
-              </p>
+          <section aria-labelledby="results-heading">
+            <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b-2 border-fg pb-3">
+              <div>
+                <h2
+                  id="results-heading"
+                  className="text-xl font-extrabold uppercase tracking-tight text-fg"
+                >
+                  {headingText}
+                </h2>
+                {status === 'ready' && pagination && (
+                  <p className="text-sm text-fg-muted">
+                    {pagination.total}{' '}
+                    {pagination.total === 1 ? 'article' : 'articles'}
+                  </p>
+                )}
+              </div>
+              <SortControl value={sort} />
+            </div>
+
+            {status === 'loading' && <SkeletonGrid />}
+
+            {status === 'error' && (
+              <ErrorState
+                message={errorMessage}
+                onRetry={() => setReloadToken((token) => token + 1)}
+              />
             )}
-          </div>
-          <SortControl value={sort} />
-        </div>
 
-        {status === 'loading' && <SkeletonGrid />}
+            {status === 'ready' && gridArticles.length === 0 && !featured && (
+              <EmptyState
+                title="No articles found"
+                message={
+                  category === EVENTS_CATEGORY_SLUG
+                    ? `No AI events found in the ${EVENTS_WINDOW_LABEL.toLowerCase()}.`
+                    : hasFilters
+                      ? 'No stories match these filters yet. Try a different category or clear the filters.'
+                      : 'No stories have been collected yet. Run the collection job, or seed development data, to populate the feed.'
+                }
+                actionLabel={hasFilters ? 'Clear filters' : undefined}
+                onAction={
+                  hasFilters ? () => router.push(pathname) : undefined
+                }
+              />
+            )}
 
-        {status === 'error' && (
-          <ErrorState
-            message={errorMessage}
-            onRetry={() => setReloadToken((token) => token + 1)}
-          />
-        )}
+            {status === 'ready' && gridArticles.length > 0 && (
+              <ArticleGrid articles={gridArticles} label="Latest articles" />
+            )}
 
-        {status === 'ready' && gridArticles.length === 0 && !featured && (
-          <EmptyState
-            title="No articles found"
-            message={
-              hasFilters
-                ? 'No stories match these filters yet. Try a different category or clear the filters.'
-                : 'No stories have been collected yet. Run the collection job, or seed development data, to populate the feed.'
-            }
-            actionLabel={hasFilters ? 'Clear filters' : undefined}
-            onAction={
-              hasFilters ? () => router.push(pathname) : undefined
-            }
-          />
-        )}
-
-        {status === 'ready' && gridArticles.length > 0 && (
-          <ArticleGrid articles={gridArticles} label="Latest articles" />
-        )}
-
-        {status === 'ready' && pagination && (
-          <Pagination
-            pagination={pagination}
-            onPageChange={(next) =>
-              setParam({ page: next === 1 ? null : String(next) })
-            }
-          />
-        )}
-      </section>
+            {status === 'ready' && pagination && (
+              <Pagination
+                pagination={pagination}
+                onPageChange={(next) =>
+                  setParam({ page: next === 1 ? null : String(next) })
+                }
+              />
+            )}
+          </section>
+        </>
+      )}
     </div>
   );
 }

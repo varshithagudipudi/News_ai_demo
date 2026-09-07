@@ -7,7 +7,7 @@ export function ErrorState({ message, onRetry }: ErrorStateProps) {
   return (
     <div
       role="alert"
-      className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border bg-surface px-6 py-16 text-center"
+      className="flex flex-col items-center justify-center rounded-none border border-dashed border-border bg-surface px-6 py-16 text-center"
     >
       <svg
         aria-hidden="true"
@@ -29,7 +29,7 @@ export function ErrorState({ message, onRetry }: ErrorStateProps) {
       <button
         type="button"
         onClick={onRetry}
-        className="mt-6 inline-flex h-10 items-center rounded-lg bg-accent px-4 text-sm font-semibold text-accent-fg transition-opacity hover:opacity-90"
+        className="mt-6 inline-flex h-10 items-center rounded-none bg-fg px-4 text-sm font-bold uppercase tracking-wide text-bg transition-colors hover:bg-accent hover:text-accent-fg"
       >
         Retry
       </button>

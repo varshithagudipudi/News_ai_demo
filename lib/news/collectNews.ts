@@ -142,13 +142,25 @@ export async function collectNews(): Promise<CollectionSummary> {
 
   try {
     const env = getEnv();
-    const windowStart = new Date(
+
+    const defaultWindowStart = new Date(
       startedAt.getTime() - env.COLLECT_MAX_AGE_HOURS * 60 * 60 * 1000,
+    );
+
+    // Most categories share the global lookback, but a sparser category (e.g.
+    // event/conference coverage) can override it to reach further back. The
+    // fingerprint lookup has to cover the deepest of all of them.
+    const deepestMaxAgeHours = Math.max(
+      env.COLLECT_MAX_AGE_HOURS,
+      ...collectableCategories.map((category) => category.maxAgeHours ?? 0),
+    );
+    const deepestWindowStart = new Date(
+      startedAt.getTime() - deepestMaxAgeHours * 60 * 60 * 1000,
     );
 
     const existing = await repository.findRecentFingerprints(
       new Date(
-        windowStart.getTime() - 7 * 24 * 60 * 60 * 1000,
+        deepestWindowStart.getTime() - 7 * 24 * 60 * 60 * 1000,
       ).toISOString(),
     );
 
@@ -167,6 +179,10 @@ export async function collectNews(): Promise<CollectionSummary> {
         duplicate: 0,
         failed: 0,
       };
+
+      const windowStart = category.maxAgeHours
+        ? new Date(startedAt.getTime() - category.maxAgeHours * 60 * 60 * 1000)
+        : defaultWindowStart;
 
       try {
         const raw = await searchNews({

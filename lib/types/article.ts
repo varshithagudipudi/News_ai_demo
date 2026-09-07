@@ -54,6 +54,10 @@ export interface ArticleQuery {
   sort: SortOrder;
   page: number;
   limit: number;
+  /** Inclusive lower bound on `publishedAt`, ISO 8601. */
+  startDate: string | null;
+  /** Exclusive upper bound on `publishedAt`, ISO 8601. */
+  endDate: string | null;
 }
 
 /** Per-run summary returned by the collection endpoint. */

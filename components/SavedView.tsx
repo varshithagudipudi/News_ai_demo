@@ -17,9 +17,26 @@ export function SavedView() {
 
   return (
     <div className="mx-auto max-w-content px-4 py-8 sm:px-6">
+      {mounted && bookmarks.length > 0 && (
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <Link
+            href="/"
+            className="font-bold text-accent hover:underline"
+          >
+            Back to all news
+          </Link>
+          <button
+            type="button"
+            onClick={clearBookmarks}
+            className="inline-flex h-9 items-center rounded-none border border-border bg-surface px-3 text-sm font-bold uppercase tracking-wide text-fg transition-colors hover:border-accent hover:text-accent">
+          
+            Remove all
+          </button>
+        </div>
+      )}
       <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-fg">
+          <h1 className="text-2xl font-extrabold uppercase tracking-tight text-fg">
             Saved articles
           </h1>
           <p className="mt-1 max-w-2xl text-sm text-fg-muted">
@@ -28,16 +45,6 @@ export function SavedView() {
             devices.
           </p>
         </div>
-
-        {mounted && bookmarks.length > 0 && (
-          <button
-            type="button"
-            onClick={clearBookmarks}
-            className="inline-flex h-9 items-center rounded-lg border border-border bg-surface px-3 text-sm font-medium text-fg transition-colors hover:bg-surface-muted"
-          >
-            Remove all
-          </button>
-        )}
       </div>
 
       {!mounted && <SkeletonGrid count={3} />}
@@ -56,11 +63,6 @@ export function SavedView() {
             label="Saved articles"
             onRemove={removeBookmark}
           />
-          <p className="mt-8 text-sm text-fg-muted">
-            <Link href="/" className="font-semibold text-accent hover:underline">
-              Back to all news
-            </Link>
-          </p>
         </>
       )}
     </div>

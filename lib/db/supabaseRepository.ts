@@ -126,6 +126,13 @@ export function createSupabaseRepository(): ArticleRepository {
         }
       }
 
+      if (query.startDate) {
+        request = request.gte('published_at', query.startDate);
+      }
+      if (query.endDate) {
+        request = request.lt('published_at', query.endDate);
+      }
+
       const from = (query.page - 1) * query.limit;
       const { data, error, count } = await request
         .order('published_at', { ascending: query.sort === 'oldest' })

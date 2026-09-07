@@ -20,6 +20,8 @@ describe('parseArticleQuery', () => {
       sort: 'newest',
       page: 1,
       limit: siteConfig.defaultPageSize,
+      startDate: null,
+      endDate: null,
     });
   });
 

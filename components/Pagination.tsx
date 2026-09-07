@@ -30,7 +30,7 @@ export function Pagination({ pagination, onPageChange }: PaginationProps) {
           type="button"
           onClick={() => onPageChange(page - 1)}
           disabled={page <= 1}
-          className="inline-flex h-9 items-center rounded-lg border border-border bg-surface px-3 text-sm font-medium text-fg transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex h-9 items-center rounded-none border border-border bg-surface px-3 text-sm font-bold uppercase tracking-wide text-fg transition-colors hover:border-fg disabled:cursor-not-allowed disabled:opacity-40"
         >
           Previous
         </button>
@@ -41,7 +41,7 @@ export function Pagination({ pagination, onPageChange }: PaginationProps) {
           type="button"
           onClick={() => onPageChange(page + 1)}
           disabled={page >= totalPages}
-          className="inline-flex h-9 items-center rounded-lg border border-border bg-surface px-3 text-sm font-medium text-fg transition-colors hover:bg-surface-muted disabled:cursor-not-allowed disabled:opacity-40"
+          className="inline-flex h-9 items-center rounded-none border border-border bg-surface px-3 text-sm font-bold uppercase tracking-wide text-fg transition-colors hover:border-fg disabled:cursor-not-allowed disabled:opacity-40"
         >
           Next
         </button>

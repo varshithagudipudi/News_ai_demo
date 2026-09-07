@@ -79,7 +79,7 @@ export function SearchBar() {
         value={value}
         onChange={(event) => setValue(event.target.value)}
         placeholder="Search AI &amp; startup news"
-        className="w-full rounded-lg border border-border bg-surface py-2 pl-9 pr-3 text-sm text-fg placeholder:text-fg-muted focus:border-accent"
+        className="w-full rounded-none border border-border bg-[#F5F5F5] dark:bg-surface-muted py-2 pl-9 pr-3 text-sm text-fg placeholder:text-fg-muted focus:border-accent"
       />
     </form>
   );

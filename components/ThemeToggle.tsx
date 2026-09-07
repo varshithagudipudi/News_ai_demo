@@ -47,7 +47,7 @@ export function ThemeToggle() {
       onClick={toggle}
       aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
       aria-pressed={mounted ? isDark : undefined}
-      className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border bg-surface text-fg-muted transition-colors hover:bg-surface-muted hover:text-fg"
+      className="inline-flex h-10 w-10 items-center justify-center rounded-none border border-border bg-surface text-fg-muted transition-colors hover:border-accent hover:text-accent"
     >
       {/* Both icons render; CSS picks one so the control is correct pre-hydration. */}
       <svg

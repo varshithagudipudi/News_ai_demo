@@ -94,6 +94,18 @@ export const articleQuerySchema = z.object({
     .min(1)
     .max(siteConfig.maxPageSize)
     .default(siteConfig.defaultPageSize),
+  startDate: z
+    .string()
+    .datetime({ offset: true })
+    .or(z.string().datetime())
+    .nullable()
+    .default(null),
+  endDate: z
+    .string()
+    .datetime({ offset: true })
+    .or(z.string().datetime())
+    .nullable()
+    .default(null),
 });
 
 export type ParsedArticleQuery = z.infer<typeof articleQuerySchema>;
@@ -101,7 +113,15 @@ export type ParsedArticleQuery = z.infer<typeof articleQuerySchema>;
 /** Parses URLSearchParams, ignoring empty strings so `?search=` behaves. */
 export function parseArticleQuery(searchParams: URLSearchParams) {
   const raw: Record<string, string> = {};
-  for (const key of ['category', 'search', 'sort', 'page', 'limit']) {
+  for (const key of [
+    'category',
+    'search',
+    'sort',
+    'page',
+    'limit',
+    'startDate',
+    'endDate',
+  ]) {
     const value = searchParams.get(key);
     if (value !== null && value.trim() !== '') {
       raw[key] = value;

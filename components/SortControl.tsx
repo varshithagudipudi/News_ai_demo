@@ -29,7 +29,7 @@ export function SortControl({ value }: { value: SortOrder }) {
         id="sort-order"
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="h-9 rounded-lg border border-border bg-surface px-2 text-sm text-fg"
+        className="h-9 rounded-none border border-border bg-surface px-2 text-sm text-fg"
       >
         <option value="newest">Newest first</option>
         <option value="oldest">Oldest first</option>

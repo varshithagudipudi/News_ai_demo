@@ -77,6 +77,20 @@ export function createLocalRepository(): ArticleRepository {
         if (query.search && !matchesSearch(article, query.search)) {
           return false;
         }
+        if (
+          query.startDate &&
+          new Date(article.publishedAt).getTime() <
+            new Date(query.startDate).getTime()
+        ) {
+          return false;
+        }
+        if (
+          query.endDate &&
+          new Date(article.publishedAt).getTime() >=
+            new Date(query.endDate).getTime()
+        ) {
+          return false;
+        }
         return true;
       });
 

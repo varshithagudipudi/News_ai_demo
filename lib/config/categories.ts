@@ -11,10 +11,12 @@ export type CategorySlug =
   | 'artificial-intelligence'
   | 'generative-ai'
   | 'ai-tools'
+  | 'ai-events'
   | 'machine-learning'
   | 'robotics'
   | 'startups'
   | 'funding'
+  | 'ai-content-creators'
   | 'business';
 
 export interface CategoryDefinition {
@@ -26,6 +28,11 @@ export interface CategoryDefinition {
   strongTerms: string[];
   /** Tailwind classes for the category badge. */
   badgeClass: string;
+  /**
+   * Overrides `COLLECT_MAX_AGE_HOURS` for this category's collection run.
+   * Sparser categories need a longer lookback than the daily-volume default.
+   */
+  maxAgeHours?: number;
 }
 
 export const ALL_CATEGORY_SLUG = 'all' as const;
@@ -35,7 +42,7 @@ export const categories: CategoryDefinition[] = [
     slug: 'all',
     name: 'All News',
     strongTerms: [],
-    badgeClass: 'bg-surface-muted text-fg-muted',
+    badgeClass: 'text-fg-muted',
   },
   {
     slug: 'artificial-intelligence',
@@ -48,8 +55,7 @@ export const categories: CategoryDefinition[] = [
       'ai system',
       'ai lab',
     ],
-    badgeClass:
-      'bg-violet-100 text-violet-800 dark:bg-violet-500/15 dark:text-violet-300',
+    badgeClass: 'text-violet-700 dark:text-violet-400',
   },
   {
     slug: 'generative-ai',
@@ -66,8 +72,7 @@ export const categories: CategoryDefinition[] = [
       'midjourney',
       'stable diffusion',
     ],
-    badgeClass:
-      'bg-fuchsia-100 text-fuchsia-800 dark:bg-fuchsia-500/15 dark:text-fuchsia-300',
+    badgeClass: 'text-fuchsia-700 dark:text-fuchsia-400',
   },
   {
     slug: 'ai-tools',
@@ -82,8 +87,27 @@ export const categories: CategoryDefinition[] = [
       'ai app',
       'ai platform',
     ],
-    badgeClass:
-      'bg-sky-100 text-sky-800 dark:bg-sky-500/15 dark:text-sky-300',
+    badgeClass: 'text-sky-700 dark:text-sky-400',
+  },
+  {
+    slug: 'ai-events',
+    name: 'AI Events',
+    query:
+      '"AI event" OR "AI conference" OR "artificial intelligence conference" OR "AI summit" OR "AI webinar" OR "AI workshop" OR "AI hackathon" OR "AI expo"',
+    strongTerms: [
+      'ai event',
+      'ai events',
+      'ai conference',
+      'artificial intelligence conference',
+      'ai summit',
+      'ai webinar',
+      'ai workshop',
+      'ai hackathon',
+    ],
+    badgeClass: 'text-cyan-700 dark:text-cyan-400',
+    // Event/conference coverage is sporadic; the display range on the
+    // homepage is 30 days, so collection needs to reach back that far too.
+    maxAgeHours: 24 * 30,
   },
   {
     slug: 'machine-learning',
@@ -96,8 +120,7 @@ export const categories: CategoryDefinition[] = [
       'training data',
       'inference',
     ],
-    badgeClass:
-      'bg-emerald-100 text-emerald-800 dark:bg-emerald-500/15 dark:text-emerald-300',
+    badgeClass: 'text-emerald-700 dark:text-emerald-400',
   },
   {
     slug: 'robotics',
@@ -110,8 +133,7 @@ export const categories: CategoryDefinition[] = [
       'robot arm',
       'drone',
     ],
-    badgeClass:
-      'bg-amber-100 text-amber-900 dark:bg-amber-500/15 dark:text-amber-300',
+    badgeClass: 'text-amber-700 dark:text-amber-400',
   },
   {
     slug: 'startups',
@@ -125,8 +147,7 @@ export const categories: CategoryDefinition[] = [
       'y combinator',
       'accelerator',
     ],
-    badgeClass:
-      'bg-rose-100 text-rose-800 dark:bg-rose-500/15 dark:text-rose-300',
+    badgeClass: 'text-rose-700 dark:text-rose-400',
   },
   {
     slug: 'funding',
@@ -144,8 +165,23 @@ export const categories: CategoryDefinition[] = [
       'valuation',
       'ipo',
     ],
-    badgeClass:
-      'bg-teal-100 text-teal-800 dark:bg-teal-500/15 dark:text-teal-300',
+    badgeClass: 'text-teal-700 dark:text-teal-400',
+  },
+  {
+    slug: 'ai-content-creators',
+    name: 'AI Content Creators',
+    query:
+      '"AI content creator" OR "AI YouTuber" OR "AI newsletter" OR "AI podcast" OR "AI educator"',
+    strongTerms: [
+      'ai content creator',
+      'ai content creators',
+      'ai youtuber',
+      'ai newsletter',
+      'ai podcast',
+      'ai educator',
+      'ai influencer',
+    ],
+    badgeClass: 'text-lime-700 dark:text-lime-400',
   },
   {
     slug: 'business',
@@ -160,8 +196,7 @@ export const categories: CategoryDefinition[] = [
       'merger',
       'ai company',
     ],
-    badgeClass:
-      'bg-indigo-100 text-indigo-800 dark:bg-indigo-500/15 dark:text-indigo-300',
+    badgeClass: 'text-indigo-700 dark:text-indigo-400',
   },
 ];
 
@@ -190,9 +225,7 @@ export function getCategoryName(slug: string): string {
 }
 
 export function getCategoryBadgeClass(slug: string): string {
-  return (
-    categoryBySlug.get(slug)?.badgeClass ?? 'bg-surface-muted text-fg-muted'
-  );
+  return categoryBySlug.get(slug)?.badgeClass ?? 'text-fg-muted';
 }
 
 export function isStorableCategory(slug: string): boolean {

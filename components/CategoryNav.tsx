@@ -24,8 +24,11 @@ export function CategoryNav({ active }: { active: string }) {
   }
 
   return (
-    <nav aria-label="Article categories" className="-mx-4 px-4 sm:mx-0 sm:px-0">
-      <ul className="no-scrollbar flex gap-2 overflow-x-auto pb-1">
+    <nav
+      aria-label="Article categories"
+      className="-mx-4 border-b border-border px-4 sm:mx-0 sm:px-0"
+    >
+      <ul className="no-scrollbar flex gap-5 overflow-x-auto">
         {categories.map((category) => {
           const isActive = category.slug === active;
           return (
@@ -34,10 +37,10 @@ export function CategoryNav({ active }: { active: string }) {
                 href={hrefFor(category.slug)}
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
-                  'inline-flex h-9 items-center rounded-full border px-4 text-sm font-medium transition-colors',
+                  'inline-flex h-10 items-center border-b-2 px-3 text-xs font-bold uppercase tracking-wide transition-colors hover:bg-accent-soft',
                   isActive
-                    ? 'border-accent bg-accent text-accent-fg'
-                    : 'border-border bg-surface text-fg-muted hover:bg-surface-muted hover:text-fg',
+                    ? 'border-accent text-accent'
+                    : 'border-transparent text-fg-muted hover:text-fg',
                 )}
               >
                 {category.name}

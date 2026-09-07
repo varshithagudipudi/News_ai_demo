@@ -8,29 +8,29 @@
    * `<alpha-value>` syntax works (e.g. bg-accent/10).
    */
   :root {
-    --color-bg: 249 250 251;
+    --color-bg: 255 255 255;
     --color-surface: 255 255 255;
-    --color-surface-muted: 243 244 246;
-    --color-border: 226 232 240;
-    --color-fg: 15 23 42;
-    --color-fg-muted: 82 93 112;
-    --color-accent: 79 70 229;
+    --color-surface-muted: 244 244 244;
+    --color-border: 224 224 224;
+    --color-fg: 10 10 10;
+    --color-fg-muted: 102 102 102;
+    --color-accent: 10 191 92;
     --color-accent-fg: 255 255 255;
-    --color-accent-soft: 238 242 255;
-    --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
-      'Helvetica Neue', Arial, sans-serif;
+    --color-accent-soft: 227 250 238;
+    --font-sans: 'Helvetica Neue', Helvetica, Arial, ui-sans-serif, system-ui,
+      -apple-system, 'Segoe UI', Roboto, sans-serif;
   }
 
   .dark {
-    --color-bg: 9 11 17;
-    --color-surface: 20 24 33;
-    --color-surface-muted: 30 36 48;
-    --color-border: 45 53 68;
-    --color-fg: 237 240 246;
-    --color-fg-muted: 155 165 184;
-    --color-accent: 129 140 248;
-    --color-accent-fg: 12 14 20;
-    --color-accent-soft: 39 40 74;
+    --color-bg: 10 10 10;
+    --color-surface: 10 10 10;
+    --color-surface-muted: 26 26 26;
+    --color-border: 42 42 42;
+    --color-fg: 245 245 245;
+    --color-fg-muted: 158 158 158;
+    --color-accent: 27 217 112;
+    --color-accent-fg: 10 10 10;
+    --color-accent-soft: 16 46 32;
   }
 
   html {
@@ -73,4 +73,77 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+@keyframes ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ticker-track {
+  animation: ticker-scroll 50s linear infinite;
+}
+
+.news-ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+/* Keep keyboard-focused headlines visible and allow scrolling to them. */
+.news-ticker:focus-within .ticker-track {
+  animation: none;
+}
+
+.news-ticker:focus-within .ticker-window {
+  overflow-x: auto;
+}
+
+.news-ticker:focus-within .ticker-copy {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+
+  .ticker-window {
+    overflow-x: auto;
+  }
+
+  .ticker-copy {
+    display: none;
+  }
+}
+/* Manual scrolling stays enabled after the button loses focus. */
+.news-ticker[data-manual='true'] .ticker-track {
+  animation: none;
+  transform: none;
+}
+
+.news-ticker[data-manual='true'] .ticker-window {
+  overflow-x: auto;
+}
+
+.news-ticker[data-manual='true'] .ticker-copy {
+  display: none;
+}
+
+.ticker-window {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(var(--color-accent)) transparent;
+}
+
+/* Leave space above the destination for the navbar and ticker. */
+article[id^='article-'] {
+  scroll-margin-top: calc(var(--header-height, 0px) + 6rem);
+}
+
+article[id^='article-']:target {
+  outline: 2px solid rgb(var(--color-accent));
+  outline-offset: 3px;
 }

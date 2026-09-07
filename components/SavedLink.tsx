@@ -11,7 +11,7 @@ export function SavedLink() {
     <Link
       href="/saved"
       aria-label={`Saved articles (${count} saved)`}
-      className="relative inline-flex h-10 items-center gap-2 rounded-lg border border-border bg-surface px-3 text-sm font-medium text-fg-muted transition-colors hover:bg-surface-muted hover:text-fg"
+      className="relative inline-flex h-10 items-center gap-2 rounded-none border border-border bg-surface px-3 text-sm font-bold uppercase tracking-wide text-fg-muted transition-colors hover:border-accent hover:text-accent"
     >
       <svg
         aria-hidden="true"
@@ -26,7 +26,7 @@ export function SavedLink() {
       </svg>
       <span className="hidden sm:inline">Saved</span>
       {count > 0 && (
-        <span className="inline-flex min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-xs font-semibold text-accent-fg">
+        <span className="inline-flex min-w-5 items-center justify-center rounded-full bg-accent px-1.5 text-xs font-bold text-accent-fg">
           {count}
         </span>
       )}
