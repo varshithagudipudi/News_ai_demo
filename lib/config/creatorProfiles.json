@@ -1,0 +1,998 @@
+[
+  {
+    "id": "wolfe",
+    "name": "Matt Wolfe",
+    "url": "https://www.mattwolfe.com/",
+    "description": "AI tool discovery, creative workflows and commentary on new releases."
+  },
+  {
+    "id": "rundown",
+    "name": "The Rundown AI",
+    "url": "https://www.therundown.ai/",
+    "description": "AI news and practical guides to using new tools."
+  },
+  {
+    "id": "bens",
+    "name": "Ben's Bites",
+    "url": "https://www.bensbites.com/",
+    "description": "AI news, tools and hands-on learning for everyday work."
+  },
+  {
+    "id": "mollick",
+    "name": "Ethan Mollick — One Useful Thing",
+    "url": "https://www.oneusefulthing.org/",
+    "description": "Experiments with generative AI in work, learning and organizations."
+  },
+  {
+    "id": "simon",
+    "name": "Simon Willison",
+    "url": "https://simonwillison.net/",
+    "description": "Practical LLM experiments, programming tools and AI security analysis."
+  },
+  {
+    "id": "latent",
+    "name": "Latent Space",
+    "url": "https://www.latent.space/",
+    "description": "AI engineering interviews about models, agents and developer tools."
+  },
+  {
+    "id": "import",
+    "name": "Jack Clark — Import AI",
+    "url": "https://importai.substack.com/",
+    "description": "Research-led reporting on AI progress and its wider implications."
+  },
+  {
+    "id": "interconnects",
+    "name": "Nathan Lambert — Interconnects",
+    "url": "https://www.interconnects.ai/",
+    "description": "Analysis of language models, reinforcement learning and the AI industry."
+  },
+  {
+    "id": "ahead",
+    "name": "Sebastian Raschka — Ahead of AI",
+    "url": "https://magazine.sebastianraschka.com/",
+    "description": "Technical explanations of language-model research and implementation."
+  },
+  {
+    "id": "deeplearning",
+    "name": "DeepLearning.AI",
+    "url": "https://www.deeplearning.ai/",
+    "description": "AI education, practical short courses and industry reporting."
+  },
+  {
+    "id": "neuron",
+    "name": "The Neuron",
+    "url": "https://www.theneurondaily.com/",
+    "description": "AI news and explanations aimed at practical adoption."
+  },
+  {
+    "id": "superhuman",
+    "name": "Superhuman AI",
+    "url": "https://www.superhuman.ai/",
+    "description": "AI tools, productivity ideas and developments for working professionals."
+  },
+  {
+    "id": "tldr",
+    "name": "TLDR AI",
+    "url": "https://tldr.tech/ai",
+    "description": "A curated digest of AI research, engineering and product news."
+  },
+  {
+    "id": "lastweek",
+    "name": "Last Week in AI",
+    "url": "https://lastweekin.ai/",
+    "description": "A newsletter and podcast discussing recent AI developments."
+  },
+  {
+    "id": "aibreakdown",
+    "name": "The AI Breakdown",
+    "url": "https://www.theaibreakdown.com/",
+    "description": "Commentary on AI news and the business of emerging technology."
+  },
+  {
+    "id": "shelly",
+    "name": "Shelly Palmer",
+    "url": "https://shellypalmer.com/",
+    "description": "Technology commentary and guidance on AI in business."
+  },
+  {
+    "id": "bernard",
+    "name": "Bernard Marr",
+    "url": "https://bernardmarr.com/",
+    "description": "Explanations of AI, data and their applications in organizations."
+  },
+  {
+    "id": "allie",
+    "name": "Allie K. Miller",
+    "url": "https://www.alliekmiller.com/",
+    "description": "AI education and guidance on adoption and business strategy."
+  },
+  {
+    "id": "paul",
+    "name": "Paul Roetzer — Marketing AI Institute",
+    "url": "https://www.marketingaiinstitute.com/",
+    "description": "AI education and reporting for marketing and business leaders."
+  },
+  {
+    "id": "chrispenn",
+    "name": "Christopher S. Penn",
+    "url": "https://www.christopherspenn.com/",
+    "description": "Practical generative AI, analytics and marketing education."
+  },
+  {
+    "id": "trust",
+    "name": "Trust Insights",
+    "url": "https://www.trustinsights.ai/",
+    "description": "Educational content on analytics, AI adoption and marketing workflows."
+  },
+  {
+    "id": "hardfork",
+    "name": "Hard Fork",
+    "url": "https://www.nytimes.com/column/hard-fork",
+    "description": "A technology podcast covering AI products, companies and social effects."
+  },
+  {
+    "id": "casey",
+    "name": "Casey Newton — Platformer",
+    "url": "https://www.platformer.news/",
+    "description": "Reporting on technology platforms, AI companies and their impact."
+  },
+  {
+    "id": "stratechery",
+    "name": "Ben Thompson — Stratechery",
+    "url": "https://stratechery.com/",
+    "description": "Analysis of technology business models and AI strategy."
+  },
+  {
+    "id": "benedict",
+    "name": "Benedict Evans",
+    "url": "https://www.ben-evans.com/",
+    "description": "Analysis of technology adoption, AI and changes in markets."
+  },
+  {
+    "id": "a16z",
+    "name": "a16z",
+    "url": "https://a16z.com/ai/",
+    "description": "Essays and conversations about AI companies, products and infrastructure."
+  },
+  {
+    "id": "sequoia",
+    "name": "Sequoia Capital",
+    "url": "https://sequoiacap.com/",
+    "description": "Founder interviews and perspectives on technology and AI businesses."
+  },
+  {
+    "id": "yc",
+    "name": "Y Combinator",
+    "url": "https://www.ycombinator.com/library",
+    "description": "Founder education and conversations about building technology companies."
+  },
+  {
+    "id": "lenny",
+    "name": "Lenny Rachitsky — Lenny's Newsletter",
+    "url": "https://www.lennysnewsletter.com/",
+    "description": "Product-building interviews and practical discussion of AI at work."
+  },
+  {
+    "id": "pragmatic",
+    "name": "Gergely Orosz — The Pragmatic Engineer",
+    "url": "https://newsletter.pragmaticengineer.com/",
+    "description": "Engineering industry analysis and coverage of AI-assisted development."
+  },
+  {
+    "id": "swyx",
+    "name": "Shawn Wang — swyx",
+    "url": "https://www.swyx.io/",
+    "description": "Writing about AI engineering, developer experience and building products."
+  },
+  {
+    "id": "chip",
+    "name": "Chip Huyen",
+    "url": "https://huyenchip.com/",
+    "description": "Writing on AI engineering, evaluation and production machine learning."
+  },
+  {
+    "id": "eugene",
+    "name": "Eugene Yan",
+    "url": "https://eugeneyan.com/",
+    "description": "Applied machine learning, recommendation systems and LLM evaluation."
+  },
+  {
+    "id": "hamel",
+    "name": "Hamel Husain",
+    "url": "https://hamel.dev/",
+    "description": "Practical guidance on LLM evaluation and AI application development."
+  },
+  {
+    "id": "jason",
+    "name": "Jason Liu",
+    "url": "https://jxnl.co/",
+    "description": "Structured LLM outputs, retrieval and building AI applications."
+  },
+  {
+    "id": "shreya",
+    "name": "Shreya Shankar",
+    "url": "https://www.sh-reya.com/",
+    "description": "Research and writing on data systems and reliable AI applications."
+  },
+  {
+    "id": "danielm",
+    "name": "Daniel Miessler",
+    "url": "https://danielmiessler.com/",
+    "description": "AI workflows, personal assistants and security-focused technology writing."
+  },
+  {
+    "id": "natej",
+    "name": "Nate B. Jones",
+    "url": "https://natesnewsletter.substack.com/",
+    "description": "Analysis of AI adoption, products and the changing nature of work."
+  },
+  {
+    "id": "greg",
+    "name": "Greg Isenberg",
+    "url": "https://www.gregisenberg.com/",
+    "description": "Ideas and conversations about AI products and internet businesses."
+  },
+  {
+    "id": "dan",
+    "name": "Dan Shipper — Every",
+    "url": "https://every.to/",
+    "description": "Essays and experiments on AI tools, software and knowledge work."
+  },
+  {
+    "id": "rachel",
+    "name": "Rachel Woods — The AI Exchange",
+    "url": "https://www.theaiexchange.com/",
+    "description": "AI adoption education and practical workflows for organizations."
+  },
+  {
+    "id": "ruben",
+    "name": "Ruben Hassid — How to AI",
+    "url": "https://ruben.substack.com/",
+    "description": "Practical AI guides for writing, productivity and professional workflows."
+  },
+  {
+    "id": "sabrina",
+    "name": "Sabrina Ramonov",
+    "url": "https://www.sabrina.dev/",
+    "description": "Tutorials on AI agents, automation and content workflows."
+  },
+  {
+    "id": "liam",
+    "name": "Liam Ottley",
+    "url": "https://www.liamottley.com/",
+    "description": "Education on AI automation services and building AI businesses."
+  },
+  {
+    "id": "jeff",
+    "name": "Jeff Su",
+    "url": "https://www.jeffsu.org/",
+    "description": "Practical productivity tutorials and AI workflows for professionals."
+  },
+  {
+    "id": "tiago",
+    "name": "Tiago Forte — Forte Labs",
+    "url": "https://fortelabs.com/",
+    "description": "Knowledge-management education and workflows for modern digital tools."
+  },
+  {
+    "id": "ali",
+    "name": "Ali Abdaal",
+    "url": "https://aliabdaal.com/",
+    "description": "Productivity education and practical approaches to digital work."
+  },
+  {
+    "id": "thomas",
+    "name": "Thomas Frank",
+    "url": "https://thomasjfrank.com/",
+    "description": "Productivity systems, Notion tutorials and automation workflows."
+  },
+  {
+    "id": "karpathy",
+    "name": "Andrej Karpathy",
+    "url": "https://karpathy.ai/",
+    "description": "Neural-network explanations and hands-on language-model education."
+  },
+  {
+    "id": "fastai",
+    "name": "Jeremy Howard — fast.ai",
+    "url": "https://www.fast.ai/",
+    "description": "Practical deep-learning courses and commentary on AI development."
+  },
+  {
+    "id": "rachelthomas",
+    "name": "Rachel Thomas",
+    "url": "https://rachel.fast.ai/",
+    "description": "Writing on machine learning, AI education and responsible technology."
+  },
+  {
+    "id": "lilian",
+    "name": "Lilian Weng",
+    "url": "https://lilianweng.github.io/",
+    "description": "Detailed technical articles explaining machine-learning research."
+  },
+  {
+    "id": "jay",
+    "name": "Jay Alammar",
+    "url": "https://jalammar.github.io/",
+    "description": "Visual explanations of transformers, embeddings and language models."
+  },
+  {
+    "id": "maarten",
+    "name": "Maarten Grootendorst",
+    "url": "https://maartengrootendorst.com/",
+    "description": "Visual machine-learning explanations and language-model tutorials."
+  },
+  {
+    "id": "chrisolah",
+    "name": "Chris Olah",
+    "url": "https://colah.github.io/",
+    "description": "Illustrated explanations of neural networks and interpretability."
+  },
+  {
+    "id": "distill",
+    "name": "Distill",
+    "url": "https://distill.pub/",
+    "description": "Interactive articles that explain machine-learning ideas visually."
+  },
+  {
+    "id": "chrisbishop",
+    "name": "Christopher Bishop",
+    "url": "https://www.bishopbook.com/",
+    "description": "Learning resources for deep-learning foundations and concepts."
+  },
+  {
+    "id": "michael",
+    "name": "Michael Nielsen",
+    "url": "https://github.com/mnielsen",
+    "description": "Open educational code explaining neural networks and deep learning."
+  },
+  {
+    "id": "d2l",
+    "name": "Dive into Deep Learning",
+    "url": "https://d2l.ai/",
+    "description": "An interactive deep-learning textbook with code and mathematical explanations."
+  },
+  {
+    "id": "francois",
+    "name": "François Chollet",
+    "url": "https://fchollet.com/",
+    "description": "Writing and educational resources on deep learning and intelligence."
+  },
+  {
+    "id": "aurelien",
+    "name": "Aurélien Géron",
+    "url": "https://github.com/ageron",
+    "description": "Hands-on machine-learning notebooks and educational code."
+  },
+  {
+    "id": "jake",
+    "name": "Jake VanderPlas",
+    "url": "https://jakevdp.github.io/",
+    "description": "Python, data-science and scientific-computing explanations."
+  },
+  {
+    "id": "allen",
+    "name": "Allen Downey",
+    "url": "https://www.allendowney.com/blog/",
+    "description": "Python, statistics and probabilistic-modeling tutorials."
+  },
+  {
+    "id": "peter",
+    "name": "Peter Norvig",
+    "url": "https://norvig.com/",
+    "description": "Programming, AI and problem-solving essays and educational examples."
+  },
+  {
+    "id": "andrew",
+    "name": "Andrew Ng",
+    "url": "https://www.andrewng.org/",
+    "description": "Machine-learning education and perspectives on building AI systems."
+  },
+  {
+    "id": "lex",
+    "name": "Lex Fridman",
+    "url": "https://lexfridman.com/",
+    "description": "Long-form interviews with researchers, engineers and technology founders."
+  },
+  {
+    "id": "sander",
+    "name": "Sander Dieleman",
+    "url": "https://sander.ai/",
+    "description": "Technical explanations of generative models and deep-learning research."
+  },
+  {
+    "id": "feifei",
+    "name": "Fei-Fei Li",
+    "url": "https://profiles.stanford.edu/fei-fei-li",
+    "description": "Research and public scholarship on computer vision and human-centered AI."
+  },
+  {
+    "id": "hinton",
+    "name": "Geoffrey Hinton",
+    "url": "https://www.cs.toronto.edu/~hinton/",
+    "description": "Research papers and teaching resources on neural networks."
+  },
+  {
+    "id": "bengio",
+    "name": "Yoshua Bengio",
+    "url": "https://yoshuabengio.org/",
+    "description": "Research and essays on deep learning and AI safety."
+  },
+  {
+    "id": "manning",
+    "name": "Christopher Manning",
+    "url": "https://nlp.stanford.edu/~manning/",
+    "description": "Research and learning resources on natural language processing."
+  },
+  {
+    "id": "chelsea",
+    "name": "Chelsea Finn",
+    "url": "https://ai.stanford.edu/~cbfinn/",
+    "description": "Research and teaching about robot learning and meta-learning."
+  },
+  {
+    "id": "potts",
+    "name": "Christopher Potts",
+    "url": "https://web.stanford.edu/~cgpotts/",
+    "description": "Research and educational resources on language and machine learning."
+  },
+  {
+    "id": "sutton",
+    "name": "Richard Sutton",
+    "url": "http://www.incompleteideas.net/",
+    "description": "Reinforcement-learning research and freely available learning material."
+  },
+  {
+    "id": "david",
+    "name": "David Silver",
+    "url": "https://www.davidsilver.uk/",
+    "description": "Reinforcement-learning lectures and research resources."
+  },
+  {
+    "id": "sebastianruder",
+    "name": "Sebastian Ruder",
+    "url": "https://www.ruder.io/",
+    "description": "Explanations and analysis of natural-language-processing research."
+  },
+  {
+    "id": "cameron",
+    "name": "Cameron R. Wolfe",
+    "url": "https://cameronrwolfe.substack.com/",
+    "description": "Technical breakdowns of deep learning and language-model research."
+  },
+  {
+    "id": "tunstall",
+    "name": "Lewis Tunstall",
+    "url": "https://github.com/lewtun",
+    "description": "Open-source language-model work and educational examples."
+  },
+  {
+    "id": "statquest",
+    "name": "Josh Starmer — StatQuest",
+    "url": "https://statquest.org/",
+    "description": "Accessible explanations of statistics, machine learning and neural networks."
+  },
+  {
+    "id": "3b1b",
+    "name": "Grant Sanderson — 3Blue1Brown",
+    "url": "https://www.3blue1brown.com/",
+    "description": "Visual mathematics lessons including neural networks and transformers."
+  },
+  {
+    "id": "danielbourke",
+    "name": "Daniel Bourke",
+    "url": "https://www.mrdbourke.com/",
+    "description": "Hands-on machine-learning projects and educational walkthroughs."
+  },
+  {
+    "id": "sentdex",
+    "name": "Harrison Kinsley — Sentdex",
+    "url": "https://pythonprogramming.net/",
+    "description": "Python and machine-learning tutorials built around practical examples."
+  },
+  {
+    "id": "nicholas",
+    "name": "Nicholas Renotte",
+    "url": "https://github.com/nicknochnack",
+    "description": "Code and projects accompanying AI and machine-learning tutorials."
+  },
+  {
+    "id": "krish",
+    "name": "Krish Naik",
+    "url": "https://github.com/krishnaik06",
+    "description": "Data-science, machine-learning and generative-AI learning projects."
+  },
+  {
+    "id": "dhaval",
+    "name": "Dhaval Patel — codebasics",
+    "url": "https://codebasics.io/",
+    "description": "Project-based education in Python, data science and AI."
+  },
+  {
+    "id": "camp",
+    "name": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/tag/artificial-intelligence/",
+    "description": "Community-written AI tutorials and programming education."
+  },
+  {
+    "id": "fireship",
+    "name": "Jeff Delaney — Fireship",
+    "url": "https://fireship.io/",
+    "description": "Developer-focused explanations of programming tools and emerging technology."
+  },
+  {
+    "id": "hitesh",
+    "name": "Hitesh Choudhary",
+    "url": "https://hiteshchoudhary.com/",
+    "description": "Programming education and practical software-building tutorials."
+  },
+  {
+    "id": "patrick",
+    "name": "Patrick Loeber",
+    "url": "https://github.com/patrickloeber",
+    "description": "Python and machine-learning tutorials with implementation examples."
+  },
+  {
+    "id": "james",
+    "name": "James Briggs",
+    "url": "https://jamesbriggs.io/",
+    "description": "AI engineering tutorials focused on language models and retrieval."
+  },
+  {
+    "id": "cole",
+    "name": "Cole Medin",
+    "url": "https://github.com/coleam00",
+    "description": "Open-source examples of AI agents and practical automation systems."
+  },
+  {
+    "id": "dave",
+    "name": "Dave Ebbelaar",
+    "url": "https://github.com/daveebbelaar",
+    "description": "Practical AI engineering projects and automation examples."
+  },
+  {
+    "id": "indy",
+    "name": "IndyDevDan",
+    "url": "https://github.com/disler",
+    "description": "Agentic coding experiments and developer automation walkthroughs."
+  },
+  {
+    "id": "addy",
+    "name": "Addy Osmani",
+    "url": "https://addyosmani.com/",
+    "description": "Software engineering guidance and AI-assisted development workflows."
+  },
+  {
+    "id": "hassan",
+    "name": "Hassan El Mghari",
+    "url": "https://www.nutlope.com/",
+    "description": "Open-source AI applications and developer-oriented projects."
+  },
+  {
+    "id": "shubham",
+    "name": "Shubham Saboo",
+    "url": "https://github.com/Shubhamsaboo",
+    "description": "Practical tutorials and examples for LLM applications and AI agents."
+  },
+  {
+    "id": "dair",
+    "name": "Elvis Saravia — DAIR.AI",
+    "url": "https://dair.ai/",
+    "description": "AI education and resources for language models and prompting."
+  },
+  {
+    "id": "learnprompt",
+    "name": "Learn Prompting",
+    "url": "https://learnprompting.org/",
+    "description": "Educational guides to prompting, generative AI and model safety."
+  },
+  {
+    "id": "promptguide",
+    "name": "Prompt Engineering Guide",
+    "url": "https://www.promptingguide.ai/",
+    "description": "Guides to prompting techniques, language models and agent workflows."
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic Education",
+    "url": "https://www.anthropic.com/learn",
+    "description": "Official learning resources for working with Claude."
+  },
+  {
+    "id": "openaiacademy",
+    "name": "OpenAI Academy",
+    "url": "https://academy.openai.com/",
+    "description": "Official education about using AI tools in work and learning."
+  },
+  {
+    "id": "google",
+    "name": "Google AI for Developers",
+    "url": "https://ai.google.dev/",
+    "description": "Official Gemini tutorials, prompting guidance and application examples."
+  },
+  {
+    "id": "hugging",
+    "name": "Hugging Face",
+    "url": "https://huggingface.co/learn",
+    "description": "Courses about language models, agents and machine learning."
+  },
+  {
+    "id": "langchain",
+    "name": "LangChain Academy",
+    "url": "https://academy.langchain.com/",
+    "description": "Courses on developing agents and language-model applications."
+  },
+  {
+    "id": "llama",
+    "name": "LlamaIndex",
+    "url": "https://www.llamaindex.ai/blog",
+    "description": "Tutorials on retrieval, agents and connecting language models to data."
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "url": "https://blog.n8n.io/",
+    "description": "Workflow automation tutorials, including AI agents and integrations."
+  },
+  {
+    "id": "make",
+    "name": "Make",
+    "url": "https://www.make.com/en/blog",
+    "description": "Visual automation tutorials and practical AI integration ideas."
+  },
+  {
+    "id": "zapier",
+    "name": "Zapier",
+    "url": "https://zapier.com/blog/",
+    "description": "Practical guides to AI tools, productivity and business automation."
+  },
+  {
+    "id": "bubble",
+    "name": "Bubble",
+    "url": "https://bubble.io/blog/",
+    "description": "No-code application-building education and AI product workflows."
+  },
+  {
+    "id": "retool",
+    "name": "Retool",
+    "url": "https://retool.com/blog",
+    "description": "Guides to building business applications, workflows and AI tools."
+  },
+  {
+    "id": "voiceflow",
+    "name": "Voiceflow",
+    "url": "https://www.voiceflow.com/blog",
+    "description": "Tutorials about conversational AI, assistants and agent development."
+  },
+  {
+    "id": "botpress",
+    "name": "Botpress",
+    "url": "https://botpress.com/blog",
+    "description": "Educational content on AI chatbots and business agents."
+  },
+  {
+    "id": "flowise",
+    "name": "Flowise",
+    "url": "https://docs.flowiseai.com/",
+    "description": "Learning resources for visually building LLM applications and agents."
+  },
+  {
+    "id": "dify",
+    "name": "Dify",
+    "url": "https://dify.ai/blog",
+    "description": "Tutorials and explanations of visual AI application workflows."
+  },
+  {
+    "id": "langflow",
+    "name": "Langflow",
+    "url": "https://www.langflow.org/blog",
+    "description": "Visual AI-building tutorials for agents and language-model workflows."
+  },
+  {
+    "id": "gumloop",
+    "name": "Gumloop",
+    "url": "https://www.gumloop.com/blog",
+    "description": "Education on visual AI automation and business workflows."
+  },
+  {
+    "id": "nateherk",
+    "name": "Nate Herk",
+    "url": "https://www.becomingainative.com/",
+    "description": "Practical education on AI automation and workflows for non-programmers."
+  },
+  {
+    "id": "lindy",
+    "name": "Lindy",
+    "url": "https://www.lindy.ai/blog",
+    "description": "Guides to AI assistants and automating business tasks."
+  },
+  {
+    "id": "relevance",
+    "name": "Relevance AI",
+    "url": "https://relevanceai.com/blog",
+    "description": "Educational resources about building AI agents and automated workflows."
+  },
+  {
+    "id": "mindstudio",
+    "name": "MindStudio",
+    "url": "https://www.mindstudio.ai/blog",
+    "description": "Tutorials about building AI-powered applications and automations."
+  },
+  {
+    "id": "copilot",
+    "name": "Microsoft Copilot Blog",
+    "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/",
+    "description": "Official guides to AI assistants and practical workplace applications."
+  },
+  {
+    "id": "stackai",
+    "name": "Stack AI",
+    "url": "https://www.stack-ai.com/blog",
+    "description": "Practical content about enterprise AI and visual workflow building."
+  },
+  {
+    "id": "vellum",
+    "name": "Vellum",
+    "url": "https://www.vellum.ai/blog",
+    "description": "Guides to prompting, evaluating and deploying AI workflows."
+  },
+  {
+    "id": "promptlayer",
+    "name": "PromptLayer",
+    "url": "https://blog.promptlayer.com/",
+    "description": "Practical writing about prompt management and AI development."
+  },
+  {
+    "id": "helicone",
+    "name": "Helicone",
+    "url": "https://www.helicone.ai/blog",
+    "description": "AI engineering guides on prompts, models and application monitoring."
+  },
+  {
+    "id": "braintrust",
+    "name": "Braintrust",
+    "url": "https://www.braintrust.dev/blog",
+    "description": "Guides to evaluating and improving AI applications."
+  },
+  {
+    "id": "arize",
+    "name": "Arize AI",
+    "url": "https://arize.com/blog/",
+    "description": "Educational content on model evaluation and AI observability."
+  },
+  {
+    "id": "weights",
+    "name": "Weights & Biases",
+    "url": "https://wandb.ai/fully-connected",
+    "description": "Technical articles about training, evaluating and deploying machine-learning systems."
+  },
+  {
+    "id": "lightning",
+    "name": "Lightning AI",
+    "url": "https://lightning.ai/pages/community/",
+    "description": "Practical machine-learning education and model-development tutorials."
+  },
+  {
+    "id": "fullstack",
+    "name": "Full Stack Deep Learning",
+    "url": "https://fullstackdeeplearning.com/",
+    "description": "Courses on building and deploying AI products."
+  },
+  {
+    "id": "mlops",
+    "name": "MLOps Community",
+    "url": "https://mlops.community/",
+    "description": "Practitioner interviews and educational content about production AI."
+  },
+  {
+    "id": "datatalks",
+    "name": "DataTalks.Club",
+    "url": "https://datatalks.club/",
+    "description": "Community courses and conversations about data and machine learning."
+  },
+  {
+    "id": "madewithml",
+    "name": "Goku Mohandas — Made With ML",
+    "url": "https://madewithml.com/",
+    "description": "Project-based education in production machine learning."
+  },
+  {
+    "id": "timdettmers",
+    "name": "Tim Dettmers",
+    "url": "https://timdettmers.com/",
+    "description": "Technical writing on deep learning, quantization and efficient model training."
+  },
+  {
+    "id": "dustin",
+    "name": "Dustin Tran",
+    "url": "https://dustintran.com/",
+    "description": "Research and writing about probabilistic models and machine learning."
+  },
+  {
+    "id": "ferenc",
+    "name": "Ferenc Huszár",
+    "url": "https://www.inference.vc/",
+    "description": "Technical essays on statistical learning and AI research."
+  },
+  {
+    "id": "arthur",
+    "name": "Arthur Juliani",
+    "url": "https://awjuliani.github.io/",
+    "description": "Research and writing about learning agents and artificial intelligence."
+  },
+  {
+    "id": "luke",
+    "name": "Luke Wroblewski",
+    "url": "https://www.lukew.com/",
+    "description": "Product-design writing and exploration of AI interfaces."
+  },
+  {
+    "id": "julie",
+    "name": "Julie Zhuo — The Looking Glass",
+    "url": "https://lg.substack.com/",
+    "description": "Essays about product design, leadership and changing technology."
+  },
+  {
+    "id": "sarah",
+    "name": "Sarah Guo — Conviction",
+    "url": "https://www.conviction.com/",
+    "description": "Perspectives and conversations on AI startups and company building."
+  },
+  {
+    "id": "elad",
+    "name": "Elad Gil",
+    "url": "https://blog.eladgil.com/",
+    "description": "Writing about startup growth, technology markets and AI."
+  },
+  {
+    "id": "sangeet",
+    "name": "Sangeet Paul Choudary",
+    "url": "https://platforms.substack.com/",
+    "description": "Analysis of platforms, business strategy and AI-driven change."
+  },
+  {
+    "id": "notboring",
+    "name": "Packy McCormick — Not Boring",
+    "url": "https://www.notboring.co/",
+    "description": "Essays about technology companies, emerging markets and AI."
+  },
+  {
+    "id": "dwarkesh",
+    "name": "Dwarkesh Patel",
+    "url": "https://www.dwarkesh.com/",
+    "description": "Interviews about AI research, economics and technological progress."
+  },
+  {
+    "id": "noah",
+    "name": "Noah Smith — Noahpinion",
+    "url": "https://www.noahpinion.blog/",
+    "description": "Economic commentary including AI, productivity and technology policy."
+  },
+  {
+    "id": "aakash",
+    "name": "Aakash Gupta — Product Growth",
+    "url": "https://www.news.aakashg.com/",
+    "description": "Product-management education and analysis of AI products."
+  },
+  {
+    "id": "kyle",
+    "name": "Kyle Poyar — Growth Unhinged",
+    "url": "https://www.growthunhinged.com/",
+    "description": "Analysis of software growth, pricing and AI business models."
+  },
+  {
+    "id": "tom",
+    "name": "Tomasz Tunguz",
+    "url": "https://tomtunguz.com/",
+    "description": "Data-driven writing about software businesses, markets and AI."
+  },
+  {
+    "id": "saa",
+    "name": "SaaStr",
+    "url": "https://www.saastr.com/",
+    "description": "Founder education and interviews about software and AI businesses."
+  },
+  {
+    "id": "firstround",
+    "name": "First Round Review",
+    "url": "https://review.firstround.com/",
+    "description": "Company-building advice and interviews with technology founders."
+  },
+  {
+    "id": "nfx",
+    "name": "NFX",
+    "url": "https://www.nfx.com/",
+    "description": "Essays on startup strategy, network effects and AI opportunities."
+  },
+  {
+    "id": "bessemer",
+    "name": "Bessemer Venture Partners — Atlas",
+    "url": "https://www.bvp.com/atlas",
+    "description": "Perspectives on AI companies, cloud software and startup growth."
+  },
+  {
+    "id": "convex",
+    "name": "Convex",
+    "url": "https://stack.convex.dev/",
+    "description": "Tutorials about application development, AI features and backend systems."
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel",
+    "url": "https://vercel.com/blog",
+    "description": "Developer education on web applications and AI-powered products."
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "url": "https://cursor.com/blog",
+    "description": "Writing about AI-assisted programming and coding agents."
+  },
+  {
+    "id": "replit",
+    "name": "Replit",
+    "url": "https://blog.replit.com/",
+    "description": "Guides to building applications with AI-assisted development tools."
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "url": "https://lovable.dev/blog",
+    "description": "Educational content on building applications through natural-language prompts."
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt",
+    "url": "https://bolt.new/blog",
+    "description": "Guides to creating applications with AI-assisted development."
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "url": "https://www.notion.com/blog",
+    "description": "Productivity guides and ideas for AI-assisted knowledge work."
+  },
+  {
+    "id": "airtable",
+    "name": "Airtable",
+    "url": "https://blog.airtable.com/",
+    "description": "Education on connected workflows, business applications and AI automation."
+  },
+  {
+    "id": "coda",
+    "name": "Coda",
+    "url": "https://coda.io/blog",
+    "description": "Guides to collaborative documents, productivity and AI workflows."
+  },
+  {
+    "id": "towards",
+    "name": "Towards Data Science",
+    "url": "https://towardsdatascience.com/",
+    "description": "Community explanations and tutorials on data science and machine learning."
+  },
+  {
+    "id": "kdn",
+    "name": "KDnuggets",
+    "url": "https://www.kdnuggets.com/",
+    "description": "Data-science education, AI tutorials and practical tooling coverage."
+  },
+  {
+    "id": "practicalai",
+    "name": "Practical AI",
+    "url": "https://changelog.com/practicalai",
+    "description": "Conversations about applying artificial intelligence in real systems."
+  },
+  {
+    "id": "gradient",
+    "name": "The Gradient",
+    "url": "https://thegradient.pub/",
+    "description": "Research-focused essays and interviews about artificial intelligence."
+  },
+  {
+    "id": "aisnake",
+    "name": "AI as Normal Technology",
+    "url": "https://www.aisnakeoil.com/",
+    "description": "Critical analysis of AI capabilities, evidence and societal impact."
+  }
+]

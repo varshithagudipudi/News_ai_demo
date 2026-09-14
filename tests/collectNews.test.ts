@@ -21,6 +21,27 @@ function providerArticle(
 }
 
 describe('mapProviderArticle', () => {
+  it('rejects expired news even when the collection lookback is longer', () => {
+    const result = mapProviderArticle(
+      providerArticle({ publishedAt: '2025-10-17T11:59:59.999Z' }),
+      'generative-ai',
+      new Date('2025-01-01T00:00:00Z'),
+      now,
+    );
+    expect(result.article).toBeNull();
+    expect(result.skipReason).toBe('older than 90-day retention window');
+  });
+
+  it('keeps news published exactly 90 days ago', () => {
+    const result = mapProviderArticle(
+      providerArticle({ publishedAt: '2025-10-17T12:00:00.000Z' }),
+      'generative-ai',
+      new Date('2025-01-01T00:00:00Z'),
+      now,
+    );
+    expect(result.article).not.toBeNull();
+  });
+
   it('maps a good provider record into a storable article', () => {
     const { article, skipReason } = mapProviderArticle(
       providerArticle(),

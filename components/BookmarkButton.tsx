@@ -24,7 +24,7 @@ export function BookmarkButton({ article, className }: BookmarkButtonProps) {
           : `Save "${article.title}" for later`
       }
       className={cn(
-        'inline-flex h-9 w-9 items-center justify-center rounded-none border transition-colors',
+        'inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border transition-colors',
         saved
           ? 'border-accent bg-accent text-accent-fg'
           : 'border-border bg-surface text-fg-muted hover:border-fg hover:text-fg',

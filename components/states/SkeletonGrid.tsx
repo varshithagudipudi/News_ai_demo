@@ -1,6 +1,6 @@
 function SkeletonCard() {
   return (
-    <div className="overflow-hidden border border-border bg-surface">
+    <div className="overflow-hidden rounded-xl border border-border bg-surface">
       <div className="aspect-[16/9] w-full animate-pulse bg-surface-muted" />
       <div className="space-y-3 p-4">
         <div className="h-3 w-1/4 animate-pulse bg-surface-muted" />

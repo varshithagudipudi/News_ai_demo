@@ -8,6 +8,8 @@ export interface ListResult {
 
 /** Minimal identity of an already-stored article, used for deduplication. */
 export interface ArticleFingerprint {
+  title?: string;
+  description?: string | null;
   articleUrl: string;
   normalizedTitle: string;
   sourceName: string;
@@ -43,6 +45,9 @@ export interface ArticleRepository {
   insertMany(articles: ValidatedNewArticle[]): Promise<InsertResult>;
 
   count(): Promise<number>;
+
+  /** Permanently deletes articles published strictly before the cutoff. */
+  deletePublishedBefore(cutoffIso: string): Promise<number>;
 
   /** Deletes every article. Development helper, used only by the seed script. */
   deleteAll(): Promise<void>;

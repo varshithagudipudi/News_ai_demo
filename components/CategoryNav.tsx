@@ -1,6 +1,6 @@
 'use client';
-
-import Link from 'next/link';
+import NextLink from 'next/link';
+import { FeedLink as Link } from '@/components/FeedLink';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { categories } from '@/lib/config/categories';
 import { cn } from '@/lib/utils/cn';
@@ -26,21 +26,22 @@ export function CategoryNav({ active }: { active: string }) {
   return (
     <nav
       aria-label="Article categories"
-      className="-mx-4 border-b border-border px-4 sm:mx-0 sm:px-0"
+      className="rounded-xl border border-border bg-surface p-1.5"
     >
-      <ul className="no-scrollbar flex gap-5 overflow-x-auto">
+      <ul className="flex gap-1 overflow-x-auto pb-1 [scrollbar-width:thin]">
         {categories.map((category) => {
           const isActive = category.slug === active;
           return (
             <li key={category.slug} className="shrink-0">
               <Link
                 href={hrefFor(category.slug)}
+                scroll={false}
                 aria-current={isActive ? 'page' : undefined}
                 className={cn(
-                  'inline-flex h-10 items-center border-b-2 px-3 text-xs font-bold uppercase tracking-wide transition-colors hover:bg-accent-soft',
+                  'inline-flex h-10 items-center rounded-lg px-3.5 text-xs font-semibold uppercase transition-colors',
                   isActive
-                    ? 'border-accent text-accent'
-                    : 'border-transparent text-fg-muted hover:text-fg',
+                    ? 'bg-accent text-accent-fg'
+                    : 'text-fg-muted hover:bg-accent-soft hover:text-accent',
                 )}
               >
                 {category.name}
@@ -48,6 +49,14 @@ export function CategoryNav({ active }: { active: string }) {
             </li>
           );
         })}
+        <li className="shrink-0">
+          <NextLink
+            href="/jobs"
+            className="inline-flex h-10 items-center rounded-lg px-3.5 text-xs font-semibold uppercase text-fg-muted transition-colors hover:bg-accent-soft hover:text-accent"
+          >
+            AI Jobs
+          </NextLink>
+        </li>
       </ul>
     </nav>
   );

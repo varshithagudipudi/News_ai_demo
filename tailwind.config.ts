@@ -24,9 +24,10 @@ const config: Config = {
       },
       fontFamily: {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
       },
       maxWidth: {
-        content: '80rem',
+        content: '100%',
       },
     },
   },

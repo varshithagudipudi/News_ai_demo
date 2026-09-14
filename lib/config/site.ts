@@ -6,6 +6,12 @@ export const siteConfig = {
   tagline: 'AI and startup news, collected automatically.',
   description:
     'AI Pulse collects artificial intelligence and startup headlines from across the web and links you straight to the original publisher.',
+  /** Leave a URL empty to display its footer icon without an active link. */
+  socialLinks: {
+    linkedin: '',
+    github: '',
+    x: '',
+  },
   /** Default page size for the article grid. */
   defaultPageSize: 12,
   /** Hard ceiling accepted by GET /api/articles. */

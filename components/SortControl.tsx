@@ -2,6 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import type { SortOrder } from '@/lib/types/article';
+import { updateFeedLocation } from '@/lib/utils/feedNavigation';
 
 export function SortControl({ value }: { value: SortOrder }) {
   const router = useRouter();
@@ -14,7 +15,8 @@ export function SortControl({ value }: { value: SortOrder }) {
     else params.set('sort', next);
     params.delete('page');
     const query = params.toString();
-    router.push(query ? `${pathname}?${query}` : pathname);
+    const href = query ? `${pathname}?${query}` : pathname;
+    if (!updateFeedLocation(href)) router.push(href);
   }
 
   return (
@@ -29,7 +31,7 @@ export function SortControl({ value }: { value: SortOrder }) {
         id="sort-order"
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        className="h-9 rounded-none border border-border bg-surface px-2 text-sm text-fg"
+        className="h-10 rounded-lg border border-border bg-surface px-3 text-sm text-fg"
       >
         <option value="newest">Newest first</option>
         <option value="oldest">Oldest first</option>

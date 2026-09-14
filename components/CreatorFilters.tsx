@@ -1,104 +1,34 @@
 'use client';
 
-export const CREATOR_FILTER_ALL = 'all';
+import { contentFormats, profileTypes, type DirectoryFilters } from '@/lib/creators/directory';
 
-export interface CreatorFilterValues {
-  platform: string;
-  focusArea: string;
-  skillLevel: string;
-}
-
-export const emptyCreatorFilters: CreatorFilterValues = {
-  platform: CREATOR_FILTER_ALL,
-  focusArea: CREATOR_FILTER_ALL,
-  skillLevel: CREATOR_FILTER_ALL,
-};
-
-interface CreatorFiltersProps {
-  platforms: string[];
-  focusAreas: string[];
-  skillLevels: string[];
-  value: CreatorFilterValues;
-  onChange: (next: CreatorFilterValues) => void;
-}
-
-export function CreatorFilters({
-  platforms,
-  focusAreas,
-  skillLevels,
-  value,
-  onChange,
-}: CreatorFiltersProps) {
-  const hasActiveFilters =
-    value.platform !== CREATOR_FILTER_ALL ||
-    value.focusArea !== CREATOR_FILTER_ALL ||
-    value.skillLevel !== CREATOR_FILTER_ALL;
-
-  return (
-    <div className="flex flex-wrap items-center gap-3">
-      <FilterSelect
-        label="Platform"
-        value={value.platform}
-        options={platforms}
-        onChange={(platform) => onChange({ ...value, platform })}
-      />
-      <FilterSelect
-        label="Focus area"
-        value={value.focusArea}
-        options={focusAreas}
-        onChange={(focusArea) => onChange({ ...value, focusArea })}
-      />
-      <FilterSelect
-        label="Skill level"
-        value={value.skillLevel}
-        options={skillLevels}
-        onChange={(skillLevel) => onChange({ ...value, skillLevel })}
-      />
-
-      {hasActiveFilters && (
-        <button
-          type="button"
-          onClick={() => onChange(emptyCreatorFilters)}
-          className="text-sm font-medium text-accent hover:underline"
-        >
-          Clear filters
-        </button>
-      )}
-    </div>
-  );
-}
-
-function FilterSelect({
-  label,
-  value,
-  options,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  options: string[];
-  onChange: (value: string) => void;
+export function CreatorFilters({ value, onChange }: {
+  value: DirectoryFilters; onChange: (changes: Partial<DirectoryFilters>) => void;
 }) {
-  const id = `creator-filter-${label.toLowerCase().replace(/\s+/g, '-')}`;
-
   return (
-    <div className="flex items-center gap-2">
-      <label htmlFor={id} className="text-sm font-medium text-fg-muted">
-        {label}
-      </label>
-      <select
-        id={id}
-        value={value}
-        onChange={(event) => onChange(event.target.value)}
-        className="h-9 rounded-none border border-border bg-surface px-2 text-sm text-fg"
-      >
-        <option value={CREATOR_FILTER_ALL}>All {label.toLowerCase()}s</option>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
+    <div className="space-y-6 pt-5">
+      <fieldset>
+        <legend className="mb-3 text-xs font-semibold uppercase tracking-wider text-fg-muted">Who to discover</legend>
+        <div className="space-y-1">
+          {['all', ...profileTypes].map((type) => (
+            <label key={type} className={`flex cursor-pointer items-center gap-3 rounded-lg px-2 py-2.5 text-sm ${value.type === type ? 'bg-accent-soft text-accent' : 'text-fg-muted hover:bg-surface-muted'}`}>
+              <input type="radio" name="creator-type" value={type} checked={value.type === type} onChange={() => onChange({ type })} className="h-4 w-4 shrink-0 accent-accent" />
+              {type === 'all' ? 'Everyone' : type}
+            </label>
+          ))}
+        </div>
+      </fieldset>
+      <div>
+        <label htmlFor="creator-format" className="mb-3 block text-xs font-semibold uppercase tracking-wider text-fg-muted">How you like to learn</label>
+        <select id="creator-format" value={value.format} onChange={(event) => onChange({ format: event.target.value })} className="h-11 w-full min-w-0 rounded-lg border border-border bg-surface px-3 text-sm text-fg">
+          <option value="all">All content formats</option>
+          {contentFormats.map((format) => <option key={format}>{format}</option>)}
+        </select>
+      </div>
+      <div className="rounded-xl bg-accent-soft p-4">
+        <p className="font-display text-sm font-semibold text-fg">Find your kind of insight.</p>
+        <p className="mt-2 text-xs leading-relaxed text-fg-muted">Explore a topic, read a profile, and save the voices you want to come back to.</p>
+      </div>
     </div>
   );
 }

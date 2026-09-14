@@ -1,6 +1,7 @@
 import 'server-only';
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { requireEnv } from '@/lib/config/env';
+import { newsRetentionCutoff } from '@/lib/db/retention';
 
 // Node < 22 has no native WebSocket, but @supabase/supabase-js's Realtime
 // client requires the global to exist even though this app never uses
@@ -111,7 +112,8 @@ export function createSupabaseRepository(): ArticleRepository {
     async list(query: ArticleQuery): Promise<ListResult> {
       let request = getClient()
         .from(TABLE)
-        .select(SELECT_COLUMNS, { count: 'exact' });
+        .select(SELECT_COLUMNS, { count: 'exact' })
+        .gte('published_at', newsRetentionCutoff().toISOString());
 
       if (query.category !== 'all') {
         request = request.eq('category', query.category);
@@ -159,30 +161,52 @@ export function createSupabaseRepository(): ArticleRepository {
       );
     },
 
-    async findRecentFingerprints(
+        async findRecentFingerprints(
       sinceIso: string,
     ): Promise<ArticleFingerprint[]> {
-      const { data, error } = await getClient()
-        .from(TABLE)
-        .select('article_url,normalized_title,source_name,published_at')
-        .gte('published_at', sinceIso)
-        .limit(2000);
+      const fingerprints: ArticleFingerprint[] = [];
+      const pageSize = 500;
+      let offset = 0;
 
-      if (error) throw new Error(`Fingerprint lookup failed: ${error.message}`);
+      while (true) {
+        const { data, error } = await getClient()
+          .from(TABLE)
+            .select('article_url,normalized_title,source_name,published_at,title,description')
+          .gte('published_at', sinceIso)
+          .order('published_at', { ascending: true })
+          .order('id', { ascending: true })
+          .range(offset, offset + pageSize - 1);
 
-      return (
-        data as {
+        if (error) {
+          throw new Error(`Fingerprint lookup failed: ${error.message}`);
+        }
+
+          const rows = (data ?? []) as {
+            title: string;
+            description: string | null;
           article_url: string;
           normalized_title: string;
           source_name: string;
           published_at: string;
-        }[]
-      ).map((row) => ({
-        articleUrl: row.article_url,
-        normalizedTitle: row.normalized_title,
-        sourceName: row.source_name,
-        publishedAt: new Date(row.published_at).toISOString(),
-      }));
+        }[];
+
+        if (rows.length === 0) break;
+
+        fingerprints.push(
+            ...rows.map((row) => ({
+              title: row.title,
+              description: row.description,
+            articleUrl: row.article_url,
+            normalizedTitle: row.normalized_title,
+            sourceName: row.source_name,
+            publishedAt: new Date(row.published_at).toISOString(),
+          })),
+        );
+
+        offset += rows.length;
+      }
+
+      return fingerprints;
     },
 
     async insertMany(
@@ -232,6 +256,15 @@ export function createSupabaseRepository(): ArticleRepository {
         .from(TABLE)
         .select('id', { count: 'exact', head: true });
       if (error) throw new Error(`Count failed: ${error.message}`);
+      return count ?? 0;
+    },
+
+    async deletePublishedBefore(cutoffIso: string): Promise<number> {
+      const { count, error } = await getClient()
+        .from(TABLE)
+        .delete({ count: 'exact' })
+        .lt('published_at', cutoffIso);
+      if (error) throw new Error(`Article retention cleanup failed: ${error.message}`);
       return count ?? 0;
     },
 

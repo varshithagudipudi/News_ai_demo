@@ -1,9 +1,24 @@
 import type { Metadata, Viewport } from 'next';
+import { Suspense } from 'react';
+import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '@/lib/config/site';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { ThemeScript } from '@/components/ThemeScript';
+import { SearchBar } from '@/components/SearchBar';
+
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-space-grotesk',
+});
 
 export const metadata: Metadata = {
   title: {
@@ -15,8 +30,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: light)', color: '#f6f8fc' },
+    { media: '(prefers-color-scheme: dark)', color: '#0b1220' },
   ],
 };
 
@@ -24,7 +39,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`} suppressHydrationWarning>
       <head>
         <ThemeScript />
       </head>
@@ -42,6 +57,9 @@ export default function RootLayout({
           </main>
           <Footer />
         </div>
+        <Suspense fallback={null}>
+          <SearchBar />
+        </Suspense>
       </body>
     </html>
   );

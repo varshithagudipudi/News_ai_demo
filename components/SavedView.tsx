@@ -16,7 +16,7 @@ export function SavedView() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6">
+    <div className="mx-auto max-w-content px-4 py-10 sm:px-6 sm:pb-16">
       {mounted && bookmarks.length > 0 && (
         <div className="mb-6 flex items-center justify-between gap-4">
           <Link
@@ -28,7 +28,7 @@ export function SavedView() {
           <button
             type="button"
             onClick={clearBookmarks}
-            className="inline-flex h-9 items-center rounded-none border border-border bg-surface px-3 text-sm font-bold uppercase tracking-wide text-fg transition-colors hover:border-accent hover:text-accent">
+            className="inline-flex h-9 items-center rounded-lg border border-border bg-surface px-3 text-sm font-semibold text-fg transition-colors hover:border-accent hover:text-accent">
           
             Remove all
           </button>
@@ -36,7 +36,8 @@ export function SavedView() {
       )}
       <div className="mb-6 flex flex-wrap items-start justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-extrabold uppercase tracking-tight text-fg">
+          <p className="section-eyebrow mb-3">Your reading list</p>
+          <h1 className="text-4xl font-bold tracking-tight text-fg">
             Saved articles
           </h1>
           <p className="mt-1 max-w-2xl text-sm text-fg-muted">

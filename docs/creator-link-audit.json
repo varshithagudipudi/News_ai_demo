@@ -1,0 +1,1662 @@
+[
+  {
+    "id": "wolfe",
+    "name": "Matt Wolfe",
+    "url": "https://www.mattwolfe.com/",
+    "checkedAt": "2026-09-09T07:04:08.384Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Matt Wolfe | YouTuber, Entrepreneur, Investor",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "rundown",
+    "name": "The Rundown AI",
+    "url": "https://www.therundown.ai/",
+    "checkedAt": "2026-09-09T07:04:08.080Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Rundown AI - Daily AI News &amp; Insights in 5 Minutes a Day",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "bens",
+    "name": "Ben's Bites",
+    "url": "https://www.bensbites.com/",
+    "checkedAt": "2026-09-09T07:04:08.075Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Ben&#x27;s Bites | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "mollick",
+    "name": "Ethan Mollick — One Useful Thing",
+    "url": "https://www.oneusefulthing.org/",
+    "checkedAt": "2026-09-09T07:04:08.316Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "One Useful Thing | Ethan Mollick | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "simon",
+    "name": "Simon Willison",
+    "url": "https://simonwillison.net/",
+    "checkedAt": "2026-09-09T07:04:08.233Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Simon Willison’s Weblog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "latent",
+    "name": "Latent Space",
+    "url": "https://www.latent.space/",
+    "checkedAt": "2026-09-09T07:04:08.529Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Latent.Space | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "import",
+    "name": "Jack Clark — Import AI",
+    "url": "https://importai.substack.com/",
+    "checkedAt": "2026-09-09T07:04:08.329Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Import AI | Jack Clark | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "interconnects",
+    "name": "Nathan Lambert — Interconnects",
+    "url": "https://www.interconnects.ai/",
+    "checkedAt": "2026-09-09T07:04:08.319Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Interconnects AI | Nathan Lambert | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "ahead",
+    "name": "Sebastian Raschka — Ahead of AI",
+    "url": "https://magazine.sebastianraschka.com/",
+    "checkedAt": "2026-09-09T07:04:08.505Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Ahead of AI | Sebastian Raschka, PhD | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "deeplearning",
+    "name": "DeepLearning.AI",
+    "url": "https://www.deeplearning.ai/",
+    "checkedAt": "2026-09-09T07:04:08.201Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "DeepLearning.AI: Start or Advance Your Career in AI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "neuron",
+    "name": "The Neuron",
+    "url": "https://www.theneurondaily.com/",
+    "checkedAt": "2026-09-09T07:04:08.815Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Neuron",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "superhuman",
+    "name": "Superhuman AI",
+    "url": "https://www.superhuman.ai/",
+    "checkedAt": "2026-09-09T07:04:08.938Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Superhuman AI – Top AI News, Tools &amp; Tutorials in 3 minutes a Day | Superhuman AI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "tldr",
+    "name": "TLDR AI",
+    "url": "https://tldr.tech/ai",
+    "checkedAt": "2026-09-09T07:04:08.709Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "",
+    "httpStatus": 200,
+    "note": "Primary newsletter page additionally opened in browser retrieval; title absent from HTML."
+  },
+  {
+    "id": "lastweek",
+    "name": "Last Week in AI",
+    "url": "https://lastweekin.ai/",
+    "checkedAt": "2026-09-09T07:04:08.727Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Last Week in AI | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "aibreakdown",
+    "name": "The AI Breakdown",
+    "url": "https://www.theaibreakdown.com/",
+    "checkedAt": "2026-09-09T07:04:09.068Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The AI Breakdown Podcast",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "shelly",
+    "name": "Shelly Palmer",
+    "url": "https://shellypalmer.com/",
+    "checkedAt": "2026-09-09T07:04:08.478Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "AI Keynote Speaker &amp; Advisor | AI Agents + Strategy – Shelly Palmer",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "bernard",
+    "name": "Bernard Marr",
+    "url": "https://bernardmarr.com/",
+    "checkedAt": "2026-09-09T07:04:09.939Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Bernard Marr | Future . Business . Success",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "allie",
+    "name": "Allie K. Miller",
+    "url": "https://www.alliekmiller.com/",
+    "checkedAt": "2026-09-09T07:04:08.970Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Allie K. Miller",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "paul",
+    "name": "Paul Roetzer — Marketing AI Institute",
+    "url": "https://www.marketingaiinstitute.com/",
+    "checkedAt": "2026-09-09T07:04:09.102Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Marketing AI Institute | Artificial Intelligence for Marketing",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "chrispenn",
+    "name": "Christopher S. Penn",
+    "url": "https://www.christopherspenn.com/",
+    "checkedAt": "2026-09-09T07:04:09.894Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Christopher S. Penn - Marketing AI Keynote Speaker",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "trust",
+    "name": "Trust Insights",
+    "url": "https://www.trustinsights.ai/",
+    "checkedAt": "2026-09-09T07:04:08.822Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Trust Insights - Data and Analytics Help For Marketers",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "hardfork",
+    "name": "Hard Fork",
+    "url": "https://www.nytimes.com/column/hard-fork",
+    "checkedAt": "2026-09-09T07:04:09.410Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Hard Fork - The New York Times",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "casey",
+    "name": "Casey Newton — Platformer",
+    "url": "https://www.platformer.news/",
+    "checkedAt": "2026-09-09T07:04:08.856Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Platformer",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "stratechery",
+    "name": "Ben Thompson — Stratechery",
+    "url": "https://stratechery.com/",
+    "checkedAt": "2026-09-09T07:04:08.991Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Stratechery by Ben Thompson &#8211; On the business, strategy, and impact of technology.",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "benedict",
+    "name": "Benedict Evans",
+    "url": "https://www.ben-evans.com/",
+    "checkedAt": "2026-09-09T07:04:09.243Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Benedict Evans",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "a16z",
+    "name": "a16z",
+    "url": "https://a16z.com/ai/",
+    "checkedAt": "2026-09-09T07:04:10.365Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "AI a16z | Andreessen Horowitz",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sequoia",
+    "name": "Sequoia Capital",
+    "url": "https://sequoiacap.com/",
+    "checkedAt": "2026-09-09T07:04:09.118Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Home | Sequoia Capital",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "yc",
+    "name": "Y Combinator",
+    "url": "https://www.ycombinator.com/library",
+    "checkedAt": "2026-09-09T07:04:12.648Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "YC Startup Library | Y Combinator",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "lenny",
+    "name": "Lenny Rachitsky — Lenny's Newsletter",
+    "url": "https://www.lennysnewsletter.com/",
+    "checkedAt": "2026-09-09T07:04:09.415Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Lenny&#x27;s Newsletter | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "pragmatic",
+    "name": "Gergely Orosz — The Pragmatic Engineer",
+    "url": "https://newsletter.pragmaticengineer.com/",
+    "checkedAt": "2026-09-09T07:04:09.532Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Pragmatic Engineer | Gergely Orosz | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "swyx",
+    "name": "Shawn Wang — swyx",
+    "url": "https://www.swyx.io/",
+    "checkedAt": "2026-09-09T07:04:09.886Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "swyx's site",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "chip",
+    "name": "Chip Huyen",
+    "url": "https://huyenchip.com/",
+    "checkedAt": "2026-09-09T07:04:10.783Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Chip Huyen",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "eugene",
+    "name": "Eugene Yan",
+    "url": "https://eugeneyan.com/",
+    "checkedAt": "2026-09-09T07:04:09.890Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Eugene Yan",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "hamel",
+    "name": "Hamel Husain",
+    "url": "https://hamel.dev/",
+    "checkedAt": "2026-09-09T07:04:09.820Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Hamel Husain’s Blog – Hamel's Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "jason",
+    "name": "Jason Liu",
+    "url": "https://jxnl.co/",
+    "checkedAt": "2026-09-09T07:04:10.313Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Introductions - Jason Liu",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "shreya",
+    "name": "Shreya Shankar",
+    "url": "https://www.sh-reya.com/",
+    "checkedAt": "2026-09-09T07:04:09.976Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Shreya Shankar",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "danielm",
+    "name": "Daniel Miessler",
+    "url": "https://danielmiessler.com/",
+    "checkedAt": "2026-09-09T07:04:10.554Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Home | Daniel Miessler",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "natej",
+    "name": "Nate B. Jones",
+    "url": "https://natesnewsletter.substack.com/",
+    "checkedAt": "2026-09-09T07:04:10.339Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Nate’s Substack | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "greg",
+    "name": "Greg Isenberg",
+    "url": "https://www.gregisenberg.com/",
+    "checkedAt": "2026-09-09T07:04:10.081Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Greg Isenberg",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "dan",
+    "name": "Dan Shipper — Every",
+    "url": "https://every.to/",
+    "checkedAt": "2026-09-09T07:04:10.594Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Every",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "rachel",
+    "name": "Rachel Woods — The AI Exchange",
+    "url": "https://www.theaiexchange.com/",
+    "checkedAt": "2026-09-09T07:04:10.567Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The AI Exchange",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "ruben",
+    "name": "Ruben Hassid — How to AI",
+    "url": "https://ruben.substack.com/",
+    "checkedAt": "2026-09-09T07:20:34.771Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "How to AI | Ruben Hassid | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sabrina",
+    "name": "Sabrina Ramonov",
+    "url": "https://www.sabrina.dev/",
+    "checkedAt": "2026-09-09T07:04:10.707Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Sabrina Ramonov 🍄 | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "liam",
+    "name": "Liam Ottley",
+    "url": "https://www.liamottley.com/",
+    "checkedAt": "2026-09-09T07:04:11.154Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Liam Ottley",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "jeff",
+    "name": "Jeff Su",
+    "url": "https://www.jeffsu.org/",
+    "checkedAt": "2026-09-09T07:04:10.588Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Jeff Su",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "tiago",
+    "name": "Tiago Forte — Forte Labs",
+    "url": "https://fortelabs.com/",
+    "checkedAt": "2026-09-09T07:04:10.667Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Home - Forte Labs",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "ali",
+    "name": "Ali Abdaal",
+    "url": "https://aliabdaal.com/",
+    "checkedAt": "2026-09-09T07:04:12.754Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Ali Abdaal - Entrepreneur, YouTuber, Productivity Expert &amp; Bestselling Author",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "thomas",
+    "name": "Thomas Frank",
+    "url": "https://thomasjfrank.com/",
+    "checkedAt": "2026-09-09T07:04:11.003Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Thomas Frank – YouTuber, Notion Nerd, Entrepreneur",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "karpathy",
+    "name": "Andrej Karpathy",
+    "url": "https://karpathy.ai/",
+    "checkedAt": "2026-09-09T07:04:10.738Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Andrej Karpathy",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "fastai",
+    "name": "Jeremy Howard — fast.ai",
+    "url": "https://www.fast.ai/",
+    "checkedAt": "2026-09-09T07:04:10.861Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "fast.ai—Making neural nets uncool again – fast.ai",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "rachelthomas",
+    "name": "Rachel Thomas",
+    "url": "https://rachel.fast.ai/",
+    "checkedAt": "2026-09-09T07:04:11.118Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "AI, science, education, &amp; ethics – Rachel Thomas, PhD",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "lilian",
+    "name": "Lilian Weng",
+    "url": "https://lilianweng.github.io/",
+    "checkedAt": "2026-09-09T07:04:11.111Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Lil&#39;Log",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "jay",
+    "name": "Jay Alammar",
+    "url": "https://jalammar.github.io/",
+    "checkedAt": "2026-09-09T07:04:11.282Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Jay Alammar – Visualizing machine learning one concept at a time.",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "maarten",
+    "name": "Maarten Grootendorst",
+    "url": "https://maartengrootendorst.com/",
+    "checkedAt": "2026-09-09T07:04:12.581Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Maarten Grootendorst",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "chrisolah",
+    "name": "Chris Olah",
+    "url": "https://colah.github.io/",
+    "checkedAt": "2026-09-09T07:04:11.379Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Home - colah's blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "distill",
+    "name": "Distill",
+    "url": "https://distill.pub/",
+    "checkedAt": "2026-09-09T07:04:11.183Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Distill — Latest articles about machine learning",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "chrisbishop",
+    "name": "Christopher Bishop",
+    "url": "https://www.bishopbook.com/",
+    "checkedAt": "2026-09-09T07:04:12.125Z",
+    "method": "Primary page opened with web browser tool",
+    "pageTitle": "Deep Learning - Foundations and Concepts",
+    "httpStatus": 403,
+    "note": "Automated fetch returned 403; primary book page was accessible through browser retrieval."
+  },
+  {
+    "id": "michael",
+    "name": "Michael Nielsen",
+    "url": "https://github.com/mnielsen",
+    "checkedAt": "2026-09-09T07:20:34.967Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "mnielsen (Michael Nielsen) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "d2l",
+    "name": "Dive into Deep Learning",
+    "url": "https://d2l.ai/",
+    "checkedAt": "2026-09-09T07:04:11.366Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Dive into Deep Learning &#8212; Dive into Deep Learning 1.0.3 documentation",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "francois",
+    "name": "François Chollet",
+    "url": "https://fchollet.com/",
+    "checkedAt": "2026-09-09T07:04:11.407Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "François Chollet - Personal Page",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "aurelien",
+    "name": "Aurélien Géron",
+    "url": "https://github.com/ageron",
+    "checkedAt": "2026-09-09T07:04:11.835Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "ageron (Aurélien Geron) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "jake",
+    "name": "Jake VanderPlas",
+    "url": "https://jakevdp.github.io/",
+    "checkedAt": "2026-09-09T07:04:11.663Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Home | Pythonic Perambulations",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "allen",
+    "name": "Allen Downey",
+    "url": "https://www.allendowney.com/blog/",
+    "checkedAt": "2026-09-09T07:04:13.218Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Probably Overthinking It - Data science, Bayesian Statistics, and other ideas",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "peter",
+    "name": "Peter Norvig",
+    "url": "https://norvig.com/",
+    "checkedAt": "2026-09-09T07:04:13.537Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Peter Norvig",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "andrew",
+    "name": "Andrew Ng",
+    "url": "https://www.andrewng.org/",
+    "checkedAt": "2026-09-09T07:04:11.928Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Andrew Ng - Official Website",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "lex",
+    "name": "Lex Fridman",
+    "url": "https://lexfridman.com/",
+    "checkedAt": "2026-09-09T07:04:12.988Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Lex Fridman",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sander",
+    "name": "Sander Dieleman",
+    "url": "https://sander.ai/",
+    "checkedAt": "2026-09-09T07:20:34.733Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Latest Posts &#8211; Sander Dieleman",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "feifei",
+    "name": "Fei-Fei Li",
+    "url": "https://profiles.stanford.edu/fei-fei-li",
+    "checkedAt": "2026-09-09T07:04:19.702Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Fei-Fei Li's Profile | Stanford Profiles",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "hinton",
+    "name": "Geoffrey Hinton",
+    "url": "https://www.cs.toronto.edu/~hinton/",
+    "checkedAt": "2026-09-09T07:04:13.322Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Geoffrey Hinton",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "bengio",
+    "name": "Yoshua Bengio",
+    "url": "https://yoshuabengio.org/",
+    "checkedAt": "2026-09-09T07:04:14.090Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Home | Yoshua Bengio",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "manning",
+    "name": "Christopher Manning",
+    "url": "https://nlp.stanford.edu/~manning/",
+    "checkedAt": "2026-09-09T07:20:35.798Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Christopher Manning, Stanford NLP",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "chelsea",
+    "name": "Chelsea Finn",
+    "url": "https://ai.stanford.edu/~cbfinn/",
+    "checkedAt": "2026-09-09T07:04:15.036Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Chelsea Finn, Stanford University",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "potts",
+    "name": "Christopher Potts",
+    "url": "https://web.stanford.edu/~cgpotts/",
+    "checkedAt": "2026-09-09T07:20:35.713Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Christopher Potts",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sutton",
+    "name": "Richard Sutton",
+    "url": "http://www.incompleteideas.net/",
+    "checkedAt": "2026-09-09T07:04:13.846Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Rich Sutton's Home Page",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "david",
+    "name": "David Silver",
+    "url": "https://www.davidsilver.uk/",
+    "checkedAt": "2026-09-09T07:04:14.606Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "David Silver",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sebastianruder",
+    "name": "Sebastian Ruder",
+    "url": "https://www.ruder.io/",
+    "checkedAt": "2026-09-09T07:04:14.125Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "ruder.io",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "cameron",
+    "name": "Cameron R. Wolfe",
+    "url": "https://cameronrwolfe.substack.com/",
+    "checkedAt": "2026-09-09T07:04:14.507Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Deep (Learning) Focus | Cameron R. Wolfe, Ph.D. | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "tunstall",
+    "name": "Lewis Tunstall",
+    "url": "https://github.com/lewtun",
+    "checkedAt": "2026-09-09T07:04:14.619Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "lewtun · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "statquest",
+    "name": "Josh Starmer — StatQuest",
+    "url": "https://statquest.org/",
+    "checkedAt": "2026-09-09T07:04:14.750Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "StatQuest!!!",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "3b1b",
+    "name": "Grant Sanderson — 3Blue1Brown",
+    "url": "https://www.3blue1brown.com/",
+    "checkedAt": "2026-09-09T07:04:14.831Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "3Blue1Brown",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "danielbourke",
+    "name": "Daniel Bourke",
+    "url": "https://www.mrdbourke.com/",
+    "checkedAt": "2026-09-09T07:04:14.845Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Daniel Bourke",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sentdex",
+    "name": "Harrison Kinsley — Sentdex",
+    "url": "https://pythonprogramming.net/",
+    "checkedAt": "2026-09-09T07:04:15.893Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Python Programming Tutorials",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "nicholas",
+    "name": "Nicholas Renotte",
+    "url": "https://github.com/nicknochnack",
+    "checkedAt": "2026-09-09T07:04:15.179Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "nicknochnack (Nicholas Renotte) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "krish",
+    "name": "Krish Naik",
+    "url": "https://github.com/krishnaik06",
+    "checkedAt": "2026-09-09T07:04:15.418Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "krishnaik06 (Krish C Naik) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "dhaval",
+    "name": "Dhaval Patel — codebasics",
+    "url": "https://codebasics.io/",
+    "checkedAt": "2026-09-09T07:04:15.264Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Data Analytics, Data Science and AI Courses | Codebasics",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "camp",
+    "name": "freeCodeCamp",
+    "url": "https://www.freecodecamp.org/news/tag/artificial-intelligence/",
+    "checkedAt": "2026-09-09T07:04:15.373Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Artificial Intelligence - freeCodeCamp.org",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "fireship",
+    "name": "Jeff Delaney — Fireship",
+    "url": "https://fireship.io/",
+    "checkedAt": "2026-09-09T07:04:15.651Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Fireship | JavaScript, but fun.",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "hitesh",
+    "name": "Hitesh Choudhary",
+    "url": "https://hiteshchoudhary.com/",
+    "checkedAt": "2026-09-09T07:04:15.330Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "hitesh.choudhary — Visual Studio Code",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "patrick",
+    "name": "Patrick Loeber",
+    "url": "https://github.com/patrickloeber",
+    "checkedAt": "2026-09-09T07:20:35.214Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "patrickloeber (Patrick Loeber) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "james",
+    "name": "James Briggs",
+    "url": "https://jamesbriggs.io/",
+    "checkedAt": "2026-09-09T07:04:16.703Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "James Briggs — AI Engineering",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "cole",
+    "name": "Cole Medin",
+    "url": "https://github.com/coleam00",
+    "checkedAt": "2026-09-09T07:04:15.794Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "coleam00 (Cole Medin) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "dave",
+    "name": "Dave Ebbelaar",
+    "url": "https://github.com/daveebbelaar",
+    "checkedAt": "2026-09-09T07:04:15.925Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "daveebbelaar (Dave Ebbelaar) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "indy",
+    "name": "IndyDevDan",
+    "url": "https://github.com/disler",
+    "checkedAt": "2026-09-09T07:04:16.126Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "disler (IndyDevDan) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "addy",
+    "name": "Addy Osmani",
+    "url": "https://addyosmani.com/",
+    "checkedAt": "2026-09-09T07:04:15.735Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Addy Osmani — Engineering, AI and Web Performance",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "hassan",
+    "name": "Hassan El Mghari",
+    "url": "https://www.nutlope.com/",
+    "checkedAt": "2026-09-09T07:04:16.585Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Hassan El Mghari",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "shubham",
+    "name": "Shubham Saboo",
+    "url": "https://github.com/Shubhamsaboo",
+    "checkedAt": "2026-09-09T07:04:16.449Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Shubhamsaboo (Shubham Saboo) · GitHub",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "dair",
+    "name": "Elvis Saravia — DAIR.AI",
+    "url": "https://dair.ai/",
+    "checkedAt": "2026-09-09T07:04:16.342Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "DAIR.AI - Empowering AI Builders &amp; Creators",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "learnprompt",
+    "name": "Learn Prompting",
+    "url": "https://learnprompting.org/",
+    "checkedAt": "2026-09-09T07:04:16.708Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Learn Prompting: Your Guide to Communicating with AI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "promptguide",
+    "name": "Prompt Engineering Guide",
+    "url": "https://www.promptingguide.ai/",
+    "checkedAt": "2026-09-09T07:04:16.529Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Prompt Engineering Guide | Prompt Engineering Guide<!-- -->",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "anthropic",
+    "name": "Anthropic Education",
+    "url": "https://www.anthropic.com/learn",
+    "checkedAt": "2026-09-09T07:04:16.953Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Claude Academy · Learn to work and build with Claude",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "openaiacademy",
+    "name": "OpenAI Academy",
+    "url": "https://academy.openai.com/",
+    "checkedAt": "2026-09-09T07:04:17.558Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "OpenAI Academy",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "google",
+    "name": "Google AI for Developers",
+    "url": "https://ai.google.dev/",
+    "checkedAt": "2026-09-09T07:04:17.275Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Gemini Developer API | Gemma open models &nbsp;|&nbsp; Google AI for Developers",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "hugging",
+    "name": "Hugging Face",
+    "url": "https://huggingface.co/learn",
+    "checkedAt": "2026-09-09T07:04:16.891Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Hugging Face - Learn",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "langchain",
+    "name": "LangChain Academy",
+    "url": "https://academy.langchain.com/",
+    "checkedAt": "2026-09-09T07:04:17.826Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "LangChain Academy",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "llama",
+    "name": "LlamaIndex",
+    "url": "https://www.llamaindex.ai/blog",
+    "checkedAt": "2026-09-09T07:04:16.801Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "url": "https://blog.n8n.io/",
+    "checkedAt": "2026-09-09T07:04:16.828Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Guide, Tutorials, and Updates on Workflow Automation - n8n Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "make",
+    "name": "Make",
+    "url": "https://www.make.com/en/blog",
+    "checkedAt": "2026-09-09T07:04:17.375Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog | Latest Updates &amp; Workflow Automation Guides | Make",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "zapier",
+    "name": "Zapier",
+    "url": "https://zapier.com/blog/",
+    "checkedAt": "2026-09-09T07:04:17.967Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Productivity Tips &amp; Workflow Automation Guides | Zapier Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "bubble",
+    "name": "Bubble",
+    "url": "https://bubble.io/blog/",
+    "checkedAt": "2026-09-09T07:04:17.270Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Bubble Blog | What you need to know about building with no-code",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "retool",
+    "name": "Retool",
+    "url": "https://retool.com/blog",
+    "checkedAt": "2026-09-09T07:04:17.430Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog | Retool Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "voiceflow",
+    "name": "Voiceflow",
+    "url": "https://www.voiceflow.com/blog",
+    "checkedAt": "2026-09-09T07:04:17.422Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog | Voiceflow",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "botpress",
+    "name": "Botpress",
+    "url": "https://botpress.com/blog",
+    "checkedAt": "2026-09-09T07:04:20.019Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog | Botpress",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "flowise",
+    "name": "Flowise",
+    "url": "https://docs.flowiseai.com/",
+    "checkedAt": "2026-09-09T07:04:17.561Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Introduction | FlowiseAI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "dify",
+    "name": "Dify",
+    "url": "https://dify.ai/blog",
+    "checkedAt": "2026-09-09T07:04:17.712Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog - Dify",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "langflow",
+    "name": "Langflow",
+    "url": "https://www.langflow.org/blog",
+    "checkedAt": "2026-09-09T07:04:17.982Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog | Langflow - The fastest way to build AI Agents | Langflow | Low-code AI builder for agentic and RAG applications",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "gumloop",
+    "name": "Gumloop",
+    "url": "https://www.gumloop.com/blog",
+    "checkedAt": "2026-09-09T07:04:17.836Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog homepage",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "nateherk",
+    "name": "Nate Herk",
+    "url": "https://www.becomingainative.com/",
+    "checkedAt": "2026-09-09T07:20:35.240Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Becoming AI Native by Nate Herk",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "lindy",
+    "name": "Lindy",
+    "url": "https://www.lindy.ai/blog",
+    "checkedAt": "2026-09-09T07:04:18.247Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Lindy Blog - Sales, Marketing and Business Guides for the AI Age",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "relevance",
+    "name": "Relevance AI",
+    "url": "https://relevanceai.com/blog",
+    "checkedAt": "2026-09-09T07:04:17.941Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog | Relevance AI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "mindstudio",
+    "name": "MindStudio",
+    "url": "https://www.mindstudio.ai/blog",
+    "checkedAt": "2026-09-09T07:04:17.969Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog | MindStudio",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "copilot",
+    "name": "Microsoft Copilot Blog",
+    "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/",
+    "checkedAt": "2026-09-09T07:20:35.715Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Microsoft Copilot Blog | AI news and insights",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "stackai",
+    "name": "Stack AI",
+    "url": "https://www.stack-ai.com/blog",
+    "checkedAt": "2026-09-09T07:04:18.261Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Expert AI Insights and Trends on the Stack AI Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "vellum",
+    "name": "Vellum",
+    "url": "https://www.vellum.ai/blog",
+    "checkedAt": "2026-09-09T07:04:18.692Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog - Vellum",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "promptlayer",
+    "name": "PromptLayer",
+    "url": "https://blog.promptlayer.com/",
+    "checkedAt": "2026-09-09T07:04:18.268Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "PromptLayer Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "helicone",
+    "name": "Helicone",
+    "url": "https://www.helicone.ai/blog",
+    "checkedAt": "2026-09-09T07:04:19.110Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Helicone Blog | AI Development Insights &amp; Best Practices",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "braintrust",
+    "name": "Braintrust",
+    "url": "https://www.braintrust.dev/blog",
+    "checkedAt": "2026-09-09T07:04:19.153Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Latest Braintrust news - Braintrust",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "arize",
+    "name": "Arize AI",
+    "url": "https://arize.com/blog/",
+    "checkedAt": "2026-09-09T07:04:19.667Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "AI Engineering Blog: Agents, Evals &amp; Observability | Arize AI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "weights",
+    "name": "Weights & Biases",
+    "url": "https://wandb.ai/fully-connected",
+    "checkedAt": "2026-09-09T07:04:18.872Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Machine Learning Articles, Tutorials & Reports by Weights & Biases",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "lightning",
+    "name": "Lightning AI",
+    "url": "https://lightning.ai/pages/community/",
+    "checkedAt": "2026-09-09T07:04:19.188Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Community - Lightning AI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "fullstack",
+    "name": "Full Stack Deep Learning",
+    "url": "https://fullstackdeeplearning.com/",
+    "checkedAt": "2026-09-09T07:04:19.114Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Full Stack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "mlops",
+    "name": "MLOps Community",
+    "url": "https://mlops.community/",
+    "checkedAt": "2026-09-09T07:04:19.313Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "MLOps Community | Learn, Meet &amp; Grow in Real-World MLOps",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "datatalks",
+    "name": "DataTalks.Club",
+    "url": "https://datatalks.club/",
+    "checkedAt": "2026-09-09T07:04:19.551Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Welcome to DataTalks.Club",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "madewithml",
+    "name": "Goku Mohandas — Made With ML",
+    "url": "https://madewithml.com/",
+    "checkedAt": "2026-09-09T07:04:19.409Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Home - Made With ML by Anyscale",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "timdettmers",
+    "name": "Tim Dettmers",
+    "url": "https://timdettmers.com/",
+    "checkedAt": "2026-09-09T07:20:36.224Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Tim Dettmers &mdash; Making deep learning accessible.",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "dustin",
+    "name": "Dustin Tran",
+    "url": "https://dustintran.com/",
+    "checkedAt": "2026-09-09T07:04:19.595Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Dustin Tran",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "ferenc",
+    "name": "Ferenc Huszár",
+    "url": "https://www.inference.vc/",
+    "checkedAt": "2026-09-09T07:04:19.603Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "inFERENCe - a machine learning blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "arthur",
+    "name": "Arthur Juliani",
+    "url": "https://awjuliani.github.io/",
+    "checkedAt": "2026-09-09T07:04:19.854Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Arthur W. Juliani",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "luke",
+    "name": "Luke Wroblewski",
+    "url": "https://www.lukew.com/",
+    "checkedAt": "2026-09-09T07:04:20.459Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "LukeW Ideation + Design | Digital Product Strategy & Design",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "julie",
+    "name": "Julie Zhuo — The Looking Glass",
+    "url": "https://lg.substack.com/",
+    "checkedAt": "2026-09-09T07:04:19.968Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Looking Glass | Julie Zhuo | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sarah",
+    "name": "Sarah Guo — Conviction",
+    "url": "https://www.conviction.com/",
+    "checkedAt": "2026-09-09T07:04:19.882Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Conviction Partners",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "elad",
+    "name": "Elad Gil",
+    "url": "https://blog.eladgil.com/",
+    "checkedAt": "2026-09-09T07:04:20.058Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Elad Blog | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "sangeet",
+    "name": "Sangeet Paul Choudary",
+    "url": "https://platforms.substack.com/",
+    "checkedAt": "2026-09-09T07:20:35.193Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Platforms, AI, and the Economics of BigTech | Sangeet Paul Choudary | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "notboring",
+    "name": "Packy McCormick — Not Boring",
+    "url": "https://www.notboring.co/",
+    "checkedAt": "2026-09-09T07:04:20.254Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Not Boring by Packy McCormick | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "dwarkesh",
+    "name": "Dwarkesh Patel",
+    "url": "https://www.dwarkesh.com/",
+    "checkedAt": "2026-09-09T07:04:20.299Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Dwarkesh Podcast | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "noah",
+    "name": "Noah Smith — Noahpinion",
+    "url": "https://www.noahpinion.blog/",
+    "checkedAt": "2026-09-09T07:04:20.320Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Noahpinion | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "aakash",
+    "name": "Aakash Gupta — Product Growth",
+    "url": "https://www.news.aakashg.com/",
+    "checkedAt": "2026-09-09T07:04:20.473Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Product Growth | Aakash Gupta | Substack",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "kyle",
+    "name": "Kyle Poyar — Growth Unhinged",
+    "url": "https://www.growthunhinged.com/",
+    "checkedAt": "2026-09-09T07:04:21.089Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Kyle Poyar&#x27;s Growth Unhinged | Weekly Newsletter | Kyle Poyar’s Growth Unhinged",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "tom",
+    "name": "Tomasz Tunguz",
+    "url": "https://tomtunguz.com/",
+    "checkedAt": "2026-09-09T07:04:20.673Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Tomasz Tunguz",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "saa",
+    "name": "SaaStr",
+    "url": "https://www.saastr.com/",
+    "checkedAt": "2026-09-09T07:04:20.489Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "SaaStrAI | B2B + AI Community, Events, Leads",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "firstround",
+    "name": "First Round Review",
+    "url": "https://review.firstround.com/",
+    "checkedAt": "2026-09-09T07:04:20.706Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "First Round Review",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "nfx",
+    "name": "NFX",
+    "url": "https://www.nfx.com/",
+    "checkedAt": "2026-09-09T07:04:21.388Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "NFX",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "bessemer",
+    "name": "Bessemer Venture Partners — Atlas",
+    "url": "https://www.bvp.com/atlas",
+    "checkedAt": "2026-09-09T07:04:20.858Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Atlas - Bessemer Venture Partners",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "convex",
+    "name": "Convex",
+    "url": "https://stack.convex.dev/",
+    "checkedAt": "2026-09-09T07:04:20.748Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Stack by Convex",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel",
+    "url": "https://vercel.com/blog",
+    "checkedAt": "2026-09-09T07:04:20.761Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog - Vercel",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "url": "https://cursor.com/blog",
+    "checkedAt": "2026-09-09T07:04:20.796Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog · Cursor",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "replit",
+    "name": "Replit",
+    "url": "https://blog.replit.com/",
+    "checkedAt": "2026-09-09T07:04:21.471Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Official Blog | Replit",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "url": "https://lovable.dev/blog",
+    "checkedAt": "2026-09-09T07:04:21.214Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Blog - Lovable",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt",
+    "url": "https://bolt.new/blog",
+    "checkedAt": "2026-09-09T07:04:21.851Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Bolt.new Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "url": "https://www.notion.com/blog",
+    "checkedAt": "2026-09-09T07:04:21.363Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Tools &amp; Craft – Notion Blog",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "airtable",
+    "name": "Airtable",
+    "url": "https://blog.airtable.com/",
+    "checkedAt": "2026-09-09T07:04:20.943Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Airtable Blog - For The Record",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "coda",
+    "name": "Coda",
+    "url": "https://coda.io/blog",
+    "checkedAt": "2026-09-09T07:04:21.005Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Coda Blog: Stories, insights, and the future of work",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "towards",
+    "name": "Towards Data Science",
+    "url": "https://towardsdatascience.com/",
+    "checkedAt": "2026-09-09T07:04:21.205Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Towards Data Science",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "kdn",
+    "name": "KDnuggets",
+    "url": "https://www.kdnuggets.com/",
+    "checkedAt": "2026-09-09T07:04:21.336Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Data Science, Machine Learning, AI &amp; Analytics - KDnuggets",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "practicalai",
+    "name": "Practical AI",
+    "url": "https://changelog.com/practicalai",
+    "checkedAt": "2026-09-09T07:04:23.358Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "Practical AI",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "gradient",
+    "name": "The Gradient",
+    "url": "https://thegradient.pub/",
+    "checkedAt": "2026-09-09T07:04:22.478Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "The Gradient",
+    "httpStatus": 200,
+    "note": ""
+  },
+  {
+    "id": "aisnake",
+    "name": "AI as Normal Technology",
+    "url": "https://www.aisnakeoil.com/",
+    "checkedAt": "2026-09-09T07:04:22.058Z",
+    "method": "HTTP fetch and page-title review",
+    "pageTitle": "AI as Normal Technology | Sayash Kapoor | Substack",
+    "httpStatus": 200,
+    "note": ""
+  }
+]

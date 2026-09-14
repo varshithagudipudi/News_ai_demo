@@ -1,71 +1,151 @@
+import { FeedLink as Link } from '@/components/FeedLink';
 import { siteConfig } from '@/lib/config/site';
 
-/**
- * No social accounts exist yet, so these render as decorative (not `<a>`
- * tags) rather than dead links that look clickable but go nowhere.
- */
-const SOCIAL_ICONS: { name: string; path: string }[] = [
+const footerGroups = [
   {
-    name: 'Instagram',
-    path: 'M12 2.2c2.7 0 3 0 4.1.06 1 .05 1.6.2 2 .33.5.2.9.4 1.3.8.4.4.6.8.8 1.3.14.4.28 1 .33 2 .06 1.1.06 1.4.06 4.1s0 3-.06 4.1c-.05 1-.2 1.6-.33 2-.2.5-.4.9-.8 1.3-.4.4-.8.6-1.3.8-.4.14-1 .28-2 .33-1.1.06-1.4.06-4.1.06s-3 0-4.1-.06c-1-.05-1.6-.2-2-.33-.5-.2-.9-.4-1.3-.8-.4-.4-.6-.8-.8-1.3-.14-.4-.28-1-.33-2C2.2 15 2.2 14.7 2.2 12s0-3 .06-4.1c.05-1 .2-1.6.33-2 .2-.5.4-.9.8-1.3.4-.4.8-.6 1.3-.8.4-.14 1-.28 2-.33C8 2.2 8.3 2.2 12 2.2zM12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4z',
+    title: 'Discover',
+    links: [
+      { label: 'Latest news', href: '/' },
+      { label: 'Generative AI', href: '/?category=generative-ai' },
+      { label: 'Machine learning', href: '/?category=machine-learning' },
+      { label: 'Startups', href: '/?category=startups' },
+      { label: 'Funding', href: '/?category=funding' },
+    ],
+  },
+  {
+    title: 'Explore',
+    links: [
+      { label: 'AI tools', href: '/?category=ai-tools' },
+      { label: 'AI events', href: '/?category=ai-events' },
+      { label: 'Robotics', href: '/?category=robotics' },
+      { label: 'Creator directory', href: '/?category=ai-content-creators' },
+      { label: 'AI jobs', href: '/jobs' },
+      { label: 'Saved stories', href: '/saved' },
+    ],
+  },
+];
+
+const socialLinks = [
+  {
+    name: 'LinkedIn',
+    href: siteConfig.socialLinks.linkedin,
+    path: 'M20.45 2H3.55C2.69 2 2 2.68 2 3.52v16.96c0 .84.69 1.52 1.55 1.52h16.9c.86 0 1.55-.68 1.55-1.52V3.52c0-.84-.69-1.52-1.55-1.52ZM7.93 18.75H4.98V9.2h2.95v9.55ZM6.45 7.9a1.71 1.71 0 1 1 0-3.42 1.71 1.71 0 0 1 0 3.42Zm12.3 10.85H15.8V14.1c0-1.11-.02-2.54-1.55-2.54-1.55 0-1.79 1.21-1.79 2.46v4.73H9.51V9.2h2.83v1.3h.04c.39-.74 1.36-1.52 2.79-1.52 2.98 0 3.58 1.96 3.58 4.51v5.26Z',
+  },
+  {
+    name: 'GitHub',
+    href: siteConfig.socialLinks.github,
+    path: 'M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.86c-2.78.6-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.56 9.56 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z',
   },
   {
     name: 'X',
-    path: 'M4 3h3.6l4 5.4L16.3 3H20l-6.3 8.1L20.4 21h-3.6l-4.3-5.8L7.6 21H4l6.7-8.6z',
-  },
-  {
-    name: 'Facebook',
-    path: 'M14 22v-8h2.7l.4-3.2H14V8.7c0-.9.3-1.6 1.6-1.6h1.7V4.3C17 4.2 16 4 14.8 4 12.4 4 10.8 5.4 10.8 8v2.8H8V14h2.8v8z',
-  },
-  {
-    name: 'YouTube',
-    path: 'M21.6 7.5a2.8 2.8 0 0 0-2-2C17.9 5 12 5 12 5s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.5 2.8 2.8 0 0 0 2 2C6.1 19 12 19 12 19s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.5zM10 15V9l5.2 3z',
-  },
-  {
-    name: 'LinkedIn',
-    path: 'M6.94 5a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM3.2 8.5h3.5V21H3.2zM9.7 8.5h3.4v1.7h.05c.47-.9 1.6-1.85 3.3-1.85 3.5 0 4.15 2.3 4.15 5.3V21h-3.5v-6.1c0-1.45-.03-3.3-2-3.3-2.03 0-2.34 1.6-2.34 3.2V21H9.7z',
+    href: siteConfig.socialLinks.x,
+    path: 'M18.9 2H22l-6.78 7.75L23.2 22h-6.25l-4.9-7.43L5.55 22H2.4l7.98-9.12L.8 2h6.41l4.43 6.75L18.9 2ZM17.8 20h1.73L6.27 3.88H4.41L17.8 20Z',
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="mt-26 border-t-2 border-fg bg-fg p-8 text-bg">
-      <div className="mx-auto max-w-content px-4 py-8 text-sm text-bg/70 sm:px-6">
-        <p className="text-base font-extrabold uppercase tracking-tight text-bg">
-          {siteConfig.name}
-        </p>
-        <p className="mt-2 max-w-2xl">
-          {siteConfig.name} shows headlines, short descriptions and links only.
-          All stories, images and copyright remain the property of their
-          original publishers. Follow the &ldquo;Read more&rdquo; link on any
-          card to read the full article on the publisher&rsquo;s own site.
-        </p>
-        <p className="mt-4 text-xs">
-          Headlines collected via the GNews API. Saved articles are stored only
-          in your browser.
-        </p>
-
-        <div className="mt-6 flex items-center gap-3">
-          <span className="sr-only">
-            Social accounts are not set up yet — icons shown for reference
-            only.
-          </span>
-          {SOCIAL_ICONS.map((icon) => (
-            <span
-              key={icon.name}
-              aria-hidden="true"
-              title={icon.name}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-bg/20 text-bg/70 transition-colors hover:border-accent hover:text-accent"
-            >
-              <svg
-                viewBox="0 0 24 24"
-                className="h-4 w-4"
-                fill="currentColor"
-              >
-                <path d={icon.path} />
+    <footer className="site-chrome overflow-hidden border-t border-border bg-surface pb-[var(--search-dock-space)] text-fg">
+      <div className="mx-auto max-w-content px-4 pt-12 sm:px-6 sm:pt-16 lg:px-10">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-20">
+          <section aria-labelledby="footer-heading" className="max-w-xl">
+            <Link href="/" className="inline-flex items-center gap-2 font-display text-sm font-bold tracking-tight text-fg">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5 text-accent">
+                <path d="M2 12h5l3-8 4 16 3-8h5" />
               </svg>
-            </span>
-          ))}
+              {siteConfig.name}
+            </Link>
+            <h2 id="footer-heading" className="mt-6 text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl lg:text-5xl">
+              Stay ahead of<br />
+              <span className="text-accent">what&apos;s next.</span>
+            </h2>
+            <p className="mt-4 max-w-sm text-sm leading-relaxed text-fg-muted sm:text-base">
+              A little clarity in the world of artificial intelligence.
+              Discover the voices making sense of it all.
+            </p>
+            <Link
+              href="/?category=ai-content-creators"
+              className="group mt-7 inline-flex min-h-14 w-full max-w-sm items-center justify-between gap-4 rounded-full border border-accent/25 bg-accent/10 py-2 pl-5 pr-2 text-sm font-semibold text-fg transition-colors hover:border-accent/60 hover:bg-accent/15"
+            >
+              Discover AI creators
+              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent text-accent-fg transition-transform group-hover:translate-x-0.5">
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
+                  <path d="M5 12h14m-6-6 6 6-6 6" />
+                </svg>
+              </span>
+            </Link>
+          </section>
+
+          <nav aria-label="Footer navigation" className="grid grid-cols-2 gap-6 lg:pt-1">
+            {footerGroups.map((group) => (
+              <div key={group.title}>
+                <h3 className="text-sm font-semibold text-fg">{group.title}</h3>
+                <ul className="mt-5 space-y-1">
+                  {group.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="inline-block py-2 text-sm text-fg-muted underline-offset-4 transition-colors hover:text-accent hover:underline sm:text-base">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
+        </div>
+
+        <div className="mt-12 flex flex-col justify-between gap-4 text-xs leading-relaxed text-fg-muted sm:mt-16 lg:flex-row lg:gap-12">
+          <p className="max-w-xl">Headlines and images belong to their original publishers. Follow a story to read it at the source. News collected via GNews.</p>
+          <p>Your saved stories stay in your browser.</p>
+        </div>
+
+        <div aria-hidden="true" className="footer-wordmark select-none py-8 text-center font-bold uppercase sm:py-12">
+          {siteConfig.name}
+        </div>
+
+        <div className="flex flex-col items-center justify-between gap-5 border-t border-border py-7 sm:flex-row sm:py-8">
+          <p className="text-sm text-fg-muted">
+            {siteConfig.name} &copy; Copyright {new Date().getFullYear()}.
+          </p>
+          <div role="group" aria-label="AI Pulse around the web" className="flex items-center gap-3">
+            {socialLinks.map((social) => {
+              const icon = (
+                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
+                  <path d={social.path} />
+                </svg>
+              );
+
+              return social.href ? (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${siteConfig.name} on ${social.name}`}
+                  className="footer-social-link"
+                >
+                  {icon}
+                </a>
+              ) : (
+                <span
+                  key={social.name}
+                  role="img"
+                  aria-label={`${social.name} — link coming soon`}
+                  title={`${social.name} — link coming soon`}
+                  className="footer-social-link text-fg-muted"
+                >
+                  {icon}
+                </span>
+              );
+            })}
+            <Link href="/" aria-label="AI Pulse homepage" className="footer-social-link">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
+                <circle cx="12" cy="12" r="9" />
+                <ellipse cx="12" cy="12" rx="4" ry="9" />
+                <path d="M3 12h18" />
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -38,26 +38,26 @@ export function ArticleImage({ src, alt, className, seed }: ArticleImageProps) {
         role="img"
         aria-label={`${alt} (no image available)`}
         className={cn(
-          'flex items-center justify-center bg-surface-muted',
+          'article-art flex items-center justify-center bg-surface-muted',
           className,
         )}
         style={{
-          backgroundImage: `linear-gradient(135deg, hsl(${hue} 55% 88%), hsl(${(hue + 45) % 360} 60% 78%))`,
+          backgroundImage: `radial-gradient(ellipse at 70% 20%, hsl(${hue} 45% 38%), transparent 70%), linear-gradient(135deg, hsl(${hue} 35% 12%), hsl(${(hue + 45) % 360} 40% 25%))`,
         }}
       >
         <svg
           aria-hidden="true"
           viewBox="0 0 24 24"
-          className="h-8 w-8 text-black/35"
+          className="h-16 w-16 text-white/70"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.6"
           strokeLinecap="round"
           strokeLinejoin="round"
         >
-          <rect x="3" y="5" width="18" height="14" rx="2" />
-          <path d="m3 16 5-5 4 4 3-3 6 6" />
-          <circle cx="9" cy="9.5" r="1.2" />
+          <rect x="6" y="6" width="12" height="12" rx="3" />
+          <rect x="9" y="9" width="6" height="6" rx="1" />
+          <path d="M9 3v3m6-3v3M9 18v3m6-3v3M3 9h3m-3 6h3m12-6h3m-3 6h3" />
         </svg>
       </div>
     );

@@ -110,6 +110,17 @@ Supabase is used only when **both** `NEXT_PUBLIC_SUPABASE_URL` and
 
 ## Database
 
+News has a rolling **90-day retention period**, based on publication time
+(`published_at`), not collection time. Each scheduled or manual collection run
+permanently deletes older articles before contacting the news provider, for both
+Supabase and the local JSON store. Articles exactly at the cutoff are retained.
+Expired news is also excluded from listings between cleanup runs, and collection
+rejects incoming news older than 90 days even with a longer configured lookback.
+
+Deploy this code to activate retention; the next collection run clears the existing
+backlog. No schema migration is required. Cleanup depends on the collection schedule
+continuing to run; deletion counts are recorded in the server logs.
+
 ### Option A — local JSON store (default, no setup)
 
 Leave the Supabase variables blank. Articles are written to
@@ -245,6 +256,10 @@ accepts both `GET` and `POST` with the same authorisation check.
 ---
 
 ## Optional AI enrichment
+
+Semantic duplicate detection is configured separately. See
+[setup and preview instructions](docs/semantic-deduplication.md) for comparing
+headlines, descriptions and publication dates before storing repeated coverage.
 
 Off by default. The application is fully functional without an AI key.
 

@@ -6,6 +6,8 @@ import { ArticleGrid } from '@/components/ArticleGrid';
 import { CategoryNav } from '@/components/CategoryNav';
 import { CreatorDirectory } from '@/components/CreatorDirectory';
 import { FeaturedArticle } from '@/components/FeaturedArticle';
+import { FeedLink } from '@/components/FeedLink';
+import { NewsBriefing } from '@/components/NewsBriefing';
 import { Pagination } from '@/components/Pagination';
 import { SortControl } from '@/components/SortControl';
 import { EmptyState } from '@/components/states/EmptyState';
@@ -13,20 +15,30 @@ import { ErrorState } from '@/components/states/ErrorState';
 import { SkeletonGrid } from '@/components/states/SkeletonGrid';
 import { getCategoryName } from '@/lib/config/categories';
 import { siteConfig } from '@/lib/config/site';
-import { NewsTicker }from './NewsTicker';
+import { NewsTicker } from '@/components/NewsTicker';
+import { updateFeedLocation } from '@/lib/utils/feedNavigation';
+import { publishSearchFeedback } from '@/lib/utils/searchPanel';
 import type {
   Article,
   ArticleListResponse,
-  Pagination as PaginationMeta,
   SortOrder,
 } from '@/lib/types/article';
 
 type Status = 'loading' | 'ready' | 'error';
 
+type FeedSnapshot = {
+  payload: ArticleListResponse;
+  category: string;
+  search: string;
+  sort: SortOrder;
+  page: number;
+};
+
 const EVENTS_CATEGORY_SLUG = 'ai-events';
 const CREATORS_CATEGORY_SLUG = 'ai-content-creators';
 
 const EVENTS_WINDOW_DAYS = 30;
+const EMPTY_ARTICLES: Article[] = [];
 
 /** [start, end) covering the trailing N days up to now. */
 function trailingWindowRange(days: number): { start: string; end: string } {
@@ -62,8 +74,9 @@ export function HomeView() {
   const page = Math.max(1, Number(searchParams.get('page') ?? '1') || 1);
 
   const [status, setStatus] = useState<Status>('loading');
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [pagination, setPagination] = useState<PaginationMeta | null>(null);
+  const [feed, setFeed] = useState<FeedSnapshot | null>(null);
+  const articles = feed?.payload.data ?? EMPTY_ARTICLES;
+  const pagination = feed?.payload.pagination ?? null;
   const [errorMessage, setErrorMessage] = useState('');
   const [reloadToken, setReloadToken] = useState(0);
 
@@ -78,6 +91,7 @@ export function HomeView() {
 
     async function load() {
       setStatus('loading');
+      publishSearchFeedback({ query: search, status: 'loading' });
 
       const params = new URLSearchParams();
       if (category !== 'all') params.set('category', category);
@@ -103,10 +117,10 @@ export function HomeView() {
           );
         }
         const payload = (await response.json()) as ArticleListResponse;
-        if (currentRequest !== requestId.current) return;
-        setArticles(payload.data);
-        setPagination(payload.pagination);
+        if (controller.signal.aborted || currentRequest !== requestId.current) return;
+        setFeed({ payload, category, search, sort, page });
         setStatus('ready');
+        publishSearchFeedback({ query: search, status: 'ready', total: payload.pagination.total });
       } catch (error) {
         if (controller.signal.aborted) return;
         if (currentRequest !== requestId.current) return;
@@ -116,6 +130,7 @@ export function HomeView() {
             : 'Something went wrong while loading articles.',
         );
         setStatus('error');
+        publishSearchFeedback({ query: search, status: 'error' });
       }
     }
 
@@ -131,15 +146,16 @@ export function HomeView() {
         else params.set(key, value);
       }
       const query = params.toString();
-      router.push(query ? `${pathname}?${query}` : pathname, {
-        scroll: true,
-      });
+      const href = query ? `${pathname}?${query}` : pathname;
+      if (!updateFeedLocation(href)) router.push(href);
     },
     [pathname, router, searchParams],
   );
 
+  // Keep the previous result and its labels intact until the next request succeeds.
+  const displayed = feed ?? { category, search, sort, page };
   const showFeatured =
-    page === 1 && sort === 'newest' && search === '' && status === 'ready';
+    feed !== null && displayed.page === 1 && displayed.sort === 'newest' && displayed.search === '';
   const featured = useMemo(
     () => (showFeatured ? pickFeatured(articles) : null),
     [showFeatured, articles],
@@ -150,40 +166,83 @@ export function HomeView() {
 
   const hasFilters = category !== 'all' || search !== '' || sort !== 'newest';
 
-  const headingText = search
-    ? `Results for “${search}”`
-    : category === EVENTS_CATEGORY_SLUG
-      ? `${getCategoryName(category)} — ${EVENTS_WINDOW_LABEL}`
-      : getCategoryName(category);
+  const headingText = displayed.search
+    ? `Results for “${displayed.search}”`
+    : displayed.category === EVENTS_CATEGORY_SLUG
+      ? `${getCategoryName(displayed.category)} — ${EVENTS_WINDOW_LABEL}`
+      : getCategoryName(displayed.category);
 
-  
+  if (category === CREATORS_CATEGORY_SLUG) return <CreatorDirectory />;
 
   return (
-    <div className="mx-auto max-w-content px-4 py-8 sm:px-6">
-       {status === 'ready' && category !== CREATORS_CATEGORY_SLUG && (
-  <NewsTicker articles={articles} />
-)}
+    <div className="mx-auto max-w-content px-4 pb-16 pt-6 sm:px-6">
+      <section aria-labelledby="page-heading" className="news-intro mb-6">
+        <div className="relative z-10 min-w-0">
+          <p className="section-eyebrow mb-4 flex items-center gap-2.5">
+            <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent ring-4 ring-accent/10" />
+            Your window into what&apos;s next
+          </p>
+          <h1 id="page-heading" className="text-[32px] font-bold leading-[1.1] tracking-[-0.045em] text-fg sm:text-[42px] xl:text-5xl">
+            The world of AI. <span className="text-accent">In focus.</span>
+          </h1>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-fg-muted sm:text-[15px]">
+            The breakthroughs, builders, and big ideas moving AI forward.
+          </p>
+        </div>
+        <div className="intro-discover relative z-10">
+          <div className="mb-3 flex items-center gap-2 text-accent">
+            <svg aria-hidden="true" viewBox="0 0 32 20" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-8"><path d="M1 10h7l4-8 7 16 4-8h8" /></svg>
+            <span className="text-[10px] font-bold uppercase tracking-[0.18em]">Follow the signal</span>
+          </div>
+          <p className="font-display text-xl font-semibold tracking-tight text-fg">Stay curious. Stay ahead.</p>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {[
+              { label: 'Research', category: 'machine-learning' },
+              { label: 'AI tools', category: 'ai-tools' },
+              { label: 'Creators', category: CREATORS_CATEGORY_SLUG },
+            ].map((topic) => (
+              <FeedLink key={topic.category} href={`/?category=${topic.category}`} scroll={false} className="intro-topic">
+                {topic.label}<span aria-hidden="true">↗</span>
+              </FeedLink>
+            ))}
+          </div>
+        </div>
+      </section>
+      <NewsTicker
+        articles={status === 'ready' && category !== CREATORS_CATEGORY_SLUG ? articles : []}
+        loading={status === 'loading' && category !== CREATORS_CATEGORY_SLUG}
+        loadingMessage={`Loading ${getCategoryName(category).toLowerCase()}…`}
+        emptyMessage={
+          category === CREATORS_CATEGORY_SLUG
+            ? 'Explore the voices shaping AI in the creator directory.'
+            : status === 'error'
+              ? 'Headlines are temporarily unavailable.'
+              : 'No headlines in this section yet.'
+        }
+      />
       <div className="mb-6">
         <CategoryNav active={category} />
       </div>
 
-      {category === CREATORS_CATEGORY_SLUG ? (
-        <CreatorDirectory />
-      ) : (
-        <>
-          {featured && <FeaturedArticle article={featured} />}
+        <div aria-busy={status === 'loading'}>
+          {featured && (
+            <div className={`mb-10 grid items-start gap-6 ${gridArticles.length > 0 ? 'xl:grid-cols-[minmax(0,1fr)_310px]' : ''}`}>
+              <FeaturedArticle article={featured} />
+              {gridArticles.length > 0 && <NewsBriefing articles={gridArticles} />}
+            </div>
+          )}
 
           <section aria-labelledby="results-heading">
-            <div className="mb-5 flex flex-wrap items-center justify-between gap-3 border-b-2 border-fg pb-3">
-              <div>
+            <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
+              <div className="flex flex-wrap items-center gap-3">
                 <h2
                   id="results-heading"
-                  className="text-xl font-extrabold uppercase tracking-tight text-fg"
+                  className="text-2xl font-bold tracking-tight text-fg"
                 >
-                  {headingText}
+                  {displayed.category === 'all' && !displayed.search ? 'The latest' : headingText}
                 </h2>
-                {status === 'ready' && pagination && (
-                  <p className="text-sm text-fg-muted">
+                {pagination && (
+                  <p className="rounded-full border border-border bg-surface px-2.5 py-1 text-xs text-fg-muted">
                     {pagination.total}{' '}
                     {pagination.total === 1 ? 'article' : 'articles'}
                   </p>
@@ -192,7 +251,7 @@ export function HomeView() {
               <SortControl value={sort} />
             </div>
 
-            {status === 'loading' && <SkeletonGrid />}
+            {status === 'loading' && !feed && <SkeletonGrid />}
 
             {status === 'error' && (
               <ErrorState
@@ -209,16 +268,18 @@ export function HomeView() {
                     ? `No AI events found in the ${EVENTS_WINDOW_LABEL.toLowerCase()}.`
                     : hasFilters
                       ? 'No stories match these filters yet. Try a different category or clear the filters.'
-                      : 'No stories have been collected yet. Run the collection job, or seed development data, to populate the feed.'
+                      : 'Your next read is on its way. Check back soon for the latest AI stories.'
                 }
                 actionLabel={hasFilters ? 'Clear filters' : undefined}
                 onAction={
-                  hasFilters ? () => router.push(pathname) : undefined
+                  hasFilters ? () => {
+                    if (!updateFeedLocation(pathname)) router.push(pathname);
+                  } : undefined
                 }
               />
             )}
 
-            {status === 'ready' && gridArticles.length > 0 && (
+            {gridArticles.length > 0 && (
               <ArticleGrid articles={gridArticles} label="Latest articles" />
             )}
 
@@ -231,8 +292,7 @@ export function HomeView() {
               />
             )}
           </section>
-        </>
-      )}
+        </div>
     </div>
   );
 }

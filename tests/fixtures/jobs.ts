@@ -1,0 +1,60 @@
+import type { Job } from '@/lib/jobs/catalog';
+// Manually reviewed primary postings. Dates below describe our review, not posting dates.
+const review = { checkedAt: '2026-09-14', reviewBy: '2026-10-14' };
+export const jobs: Job[] = [
+  {
+    id: 'karya-ai-evaluations-intern', company: 'Karya', title: 'Research Intern â€” AI Evaluations',
+    employment: ['internship'], arrangement: 'Not specified', countries: ['India'], city: 'Bengaluru', worldwide: false,
+    eligibility: 'Listed in Bengaluru, India. Work arrangement and work-authorization requirements are not specified.',
+    experience: 'Student / Graduate', specialization: 'AI Research', skills: ['AI evaluation', 'Social science', 'Language technology'],
+    summary: 'Bring social-science methods to evaluating language AI and its effects on Indian communities.',
+    responsibilities: ['Help develop evaluation methods for speech, text, and translation systems.', 'Study community impact alongside researchers and engineers.'],
+    requirements: ['Studying or recently completed a social-science undergraduate or masterâ€™s degree.', 'Research-methods training and an understanding of AI systems; a technical degree is not required.'],
+    sourceUrl: 'https://job-boards.greenhouse.io/karya/jobs/5416262008', ...review,
+  },
+  {
+    id: 'graphcore-silicon-intern-2027', company: 'Graphcore', title: 'Intern 2027 â€” Silicon Team',
+    employment: ['internship'], arrangement: 'Not specified', countries: ['India'], city: 'Bengaluru', worldwide: false,
+    eligibility: 'Listed in Bengaluru, India. Work arrangement and work-authorization requirements are not specified.',
+    experience: 'Student / Graduate', specialization: 'AI Hardware', skills: ['C++', 'Python', 'Chip design'],
+    summary: 'Gain practical experience designing, testing, and enabling the chips behind AI computing.',
+    responsibilities: ['Contribute to silicon engineering and verification projects.', 'Develop engineering tools and investigate design or validation problems.'],
+    requirements: ['Working toward an electronic engineering, computer science, or related degree.', 'Experience with C, C++, Python, or TCL and an interest in semiconductor engineering.'],
+    note: 'The employer describes this as registration of interest for its 2027 internship programme.',
+    sourceUrl: 'https://job-boards.greenhouse.io/graphcore-early-careers/jobs/8795702002', ...review,
+  },
+  {
+    id: 'apply-director-ai', company: 'APPLY', title: 'Director of AI',
+    employment: ['fulltime'], arrangement: 'Remote', countries: ['Canada'], city: 'Toronto', worldwide: false,
+    eligibility: 'Canada is the preferred location, with working hours aligned to Eastern or Pacific Time. The posting describes hybrid/remote flexibility.',
+    experience: 'Leadership', specialization: 'AI Engineering', skills: ['Python', 'RAG', 'AI agents'],
+    summary: 'Lead client-facing AI engineering, from architecture and prototypes to production systems.',
+    responsibilities: ['Guide AI solution design and production delivery.', 'Mentor engineers and develop reusable delivery practices.'],
+    requirements: ['10+ years across software, data, ML, or related engineering, including AI leadership.', 'Production AI experience, Python proficiency, and strong client communication.'],
+    sourceUrl: 'https://jobs.lever.co/applydigital/83d148d7-51c1-470b-9d53-a535ee08334a', ...review,
+  },
+  {
+    id: 'carma-research-engineer', company: 'CARMA Â· Future of Life Organizations', title: 'Research Engineer â€” AI Alignment Platforms',
+    employment: ['fulltime', 'freelancing'], arrangement: 'Remote', countries: [], worldwide: true,
+    eligibility: 'Open globally. US employment requires US work authorization; people outside the US are engaged as independent contractors. Visa sponsorship is unavailable.',
+    experience: 'Experienced', specialization: 'AI Research', skills: ['Python', 'Java', 'Multi-agent systems'],
+    summary: 'Build agent platforms and technical infrastructure for AI alignment and safety research.',
+    responsibilities: ['Develop agent execution environments and research tooling.', 'Implement and evaluate cooperative AI architectures.'],
+    requirements: ['A relevant MS/PhD or equivalent experience.', 'Python and Java skills, AI systems experience, and familiarity with alignment or safety research.'],
+    note: 'The source lists $140,000â€“$210,000 a year without an explicit currency code. Benefits apply to US employees; confirm contract terms with the employer.',
+    sourceUrl: 'https://jobs.lever.co/futureof-life/759df9eb-5611-4a42-b92d-aa199c6f2a7d', ...review,
+  },
+  {
+    id: 'welo-spanish-us-ai-analyst', company: 'Welo Data', title: 'Generative AI Analyst â€” Spanish (US)',
+    employment: ['freelancing'], arrangement: 'Remote', countries: ['United States'], worldwide: false,
+    eligibility: 'Remote within the United States. Requires native-level Spanish (US) and strong English.',
+    experience: 'Not specified', specialization: 'AI Evaluation', skills: ['Spanish', 'Data annotation', 'Content evaluation'],
+    summary: 'Review and annotate AI outputs across project-based training and quality-review assignments.',
+    responsibilities: ['Assess generated content and identify quality issues.', 'Label data and provide written feedback using project guidelines.'],
+    requirements: ['Native-level Spanish (US), strong English, and careful written judgment.', 'Annotation or AI evaluation experience is preferred.'],
+    compensation: 'USD 15 / hour', duration: 'Project-based',
+    note: 'Joining the contributor database does not guarantee project assignments or a minimum amount of work.',
+    sourceUrl: 'https://jobs.lever.co/weloglobal/87d6e588-f2f2-4daf-9ba5-9396ad026541', ...review,
+  },
+];
+

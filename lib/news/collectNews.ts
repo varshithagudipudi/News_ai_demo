@@ -4,7 +4,8 @@ import { enrichArticle } from '@/lib/ai/enrichArticle';
 import { collectableCategories } from '@/lib/config/categories';
 import { getEnv, isAiEnrichmentEnabled } from '@/lib/config/env';
 import { getRepository } from '@/lib/db';
-import { deduplicate } from '@/lib/news/deduplicate';
+import { newsRetentionCutoff } from '@/lib/db/retention';
+import { createSemanticDeduplicator } from '@/lib/news/semanticDeduplicate';
 import { searchNews, type GNewsArticle } from '@/lib/news/gnewsClient';
 import {
   normalizeTitle,
@@ -60,6 +61,9 @@ export function mapProviderArticle(
   const publishedAt = parsePublishedAt(raw.publishedAt, now);
   if (!publishedAt) {
     return { article: null, skipReason: 'missing or invalid publication date' };
+  }
+  if (new Date(publishedAt) < newsRetentionCutoff(now)) {
+    return { article: null, skipReason: 'older than 90-day retention window' };
   }
 
   const canonicalUrl = normalizeUrl(raw.url);
@@ -141,6 +145,11 @@ export async function collectNews(): Promise<CollectionSummary> {
   if (!acquired) throw new CollectionLockedError();
 
   try {
+    // Run before provider requests so even a provider outage cannot prevent cleanup.
+    const deleted = await repository.deletePublishedBefore(
+      newsRetentionCutoff(startedAt).toISOString(),
+    );
+    console.log('[collect] retention cleanup complete', { runId, deleted });
     const env = getEnv();
 
     const defaultWindowStart = new Date(
@@ -165,6 +174,7 @@ export async function collectNews(): Promise<CollectionSummary> {
     );
 
     const perCategory: CategoryRunSummary[] = [];
+    const deduper = createSemanticDeduplicator();
     let enriched = 0;
     let enrichmentBudget = isAiEnrichmentEnabled()
       ? env.AI_MAX_ENRICHMENTS_PER_RUN
@@ -204,7 +214,7 @@ export async function collectNews(): Promise<CollectionSummary> {
           else summary.skipped += 1;
         }
 
-        const { unique, duplicates } = deduplicate(candidates, existing);
+        const { unique, duplicates } = await deduper.deduplicate(candidates, existing);
         summary.duplicate = duplicates.length;
 
         // AI runs only on records that survived validation and deduplication.
@@ -260,6 +270,8 @@ export async function collectNews(): Promise<CollectionSummary> {
         // this same run does not re-insert the same story.
         for (const article of finalArticles) {
           existing.push({
+            title: article.title,
+            description: article.description,
             articleUrl: article.articleUrl,
             normalizedTitle: article.normalizedTitle,
             sourceName: article.sourceName,
@@ -281,6 +293,7 @@ export async function collectNews(): Promise<CollectionSummary> {
     }
 
     const finishedAt = new Date();
+    for (const warning of deduper.warnings) console.warn('[dedup]', warning);
     const totals = perCategory.reduce(
       (acc, item) => ({
         fetched: acc.fetched + item.fetched,

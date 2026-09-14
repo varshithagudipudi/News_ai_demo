@@ -1,76 +1,46 @@
-import { getSkillLevelBadgeClass, type Creator } from '@/lib/config/creators';
-import { cn } from '@/lib/utils/cn';
+import { directoryTopics, type CreatorProfile } from '@/lib/creators/directory';
 
-interface CreatorCardProps {
-  creator: Creator;
+export function CreatorAvatar({ creator }: { creator: CreatorProfile }) {
+  const tone = creator.id.split('').reduce((sum, char) => sum + char.charCodeAt(0), 0) % 4;
+  return <span aria-hidden="true" data-tone={tone} className="creator-avatar">
+    {creator.name.split(/\s+/).slice(0, 2).map((word) => word[0]).join('')}
+  </span>;
 }
 
-export function CreatorCard({ creator }: CreatorCardProps) {
+export function CreatorSaveButton({ creator, saved, onToggle }: { creator: CreatorProfile; saved: boolean; onToggle: () => void }) {
   return (
-    <article className="flex h-full flex-col gap-3 rounded-none border border-border bg-surface p-4 transition-colors hover:border-fg">
+    <button type="button" aria-label={`${saved ? 'Unsave' : 'Save'} ${creator.name}`} aria-pressed={saved} onClick={onToggle}
+      className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border transition-colors ${saved ? 'border-accent/30 bg-accent-soft text-accent' : 'border-border text-fg-muted hover:border-accent hover:text-accent'}`}>
+      <svg aria-hidden="true" viewBox="0 0 24 24" fill={saved ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth="1.6" strokeLinejoin="round" className="h-4 w-4"><path d="M6 4h12v16l-6-4-6 4z" /></svg>
+    </button>
+  );
+}
+
+export function CreatorCard({ creator, saved, onToggle, onOpen }: {
+  creator: CreatorProfile; saved: boolean; onToggle: () => void; onOpen: () => void;
+}) {
+  const topics = directoryTopics.filter((topic) => creator.topics.includes(topic.slug));
+  return (
+    <article className="creator-card" data-creator-id={creator.id}>
       <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <h4 className="truncate text-base font-extrabold leading-snug text-fg">
-            {creator.name}
-          </h4>
-          <p className="truncate text-xs text-fg-muted">
-            by {creator.realName}
-          </p>
-          <p className="mt-0.5 text-xs font-bold uppercase tracking-wide text-fg-muted">
-            {creator.platform}
-          </p>
-        </div>
-        <span
-          className={cn(
-            'shrink-0 rounded-full px-2.5 py-1 text-xs font-semibold',
-            getSkillLevelBadgeClass(creator.skillLevel),
-          )}
-        >
-          {creator.skillLevel}
-        </span>
+        <CreatorAvatar creator={creator} />
+        <CreatorSaveButton creator={creator} saved={saved} onToggle={onToggle} />
       </div>
-
-      <p className="line-clamp-3 text-sm leading-relaxed text-fg-muted">
-        {creator.description}
-      </p>
-
-      <div className="flex flex-wrap gap-1.5">
-        {creator.focusAreas.map((area) => (
-          <span
-            key={area}
-            className="inline-flex items-center rounded-full bg-surface-muted px-2 py-0.5 text-xs font-medium text-fg-muted"
-          >
-            {area}
-          </span>
-        ))}
+      <div className="mt-4">
+        <p className="mb-1.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-fg-muted">{creator.type}</p>
+        <h3 className="font-display text-lg font-semibold leading-snug tracking-tight text-fg">
+          <button type="button" onClick={onOpen} className="text-left hover:text-accent">{creator.name}</button>
+        </h3>
       </div>
-
-      <p className="text-xs leading-relaxed text-fg-muted">
-        <span className="font-medium text-fg">Best for: </span>
-        {creator.bestFor}
-      </p>
-
-      <a
-        href={creator.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-auto inline-flex items-center gap-1.5 self-start text-sm font-bold text-accent hover:underline"
-      >
-        Visit
-        <span className="sr-only"> {creator.name}</span>
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 24 24"
-          className="h-3.5 w-3.5"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M7 17 17 7M9 7h8v8" />
-        </svg>
-      </a>
+      <p className="mb-4 mt-3 text-sm leading-relaxed text-fg-muted">{creator.description}</p>
+      <div className="mt-auto flex flex-wrap gap-1.5">
+        {topics.slice(0, 2).map((topic) => <span key={topic.slug} className="creator-tag">{topic.label}</span>)}
+        {topics.length > 2 && <span className="creator-tag" title={topics.slice(2).map((topic) => topic.label).join(', ')}>+{topics.length - 2}</span>}
+      </div>
+      <div className="mt-5 flex items-center justify-between gap-3 border-t border-border pt-4 text-xs font-semibold">
+        <button type="button" onClick={onOpen} className="text-accent hover:underline">View profile <span aria-hidden="true">→</span><span className="sr-only"> for {creator.name}</span></button>
+        <a href={creator.url} target="_blank" rel="noopener noreferrer" className="text-fg-muted hover:text-accent">Visit site <span aria-hidden="true">↗</span><span className="sr-only"> for {creator.name} (opens in a new tab)</span></a>
+      </div>
     </article>
   );
 }

@@ -2,6 +2,7 @@ import 'server-only';
 import { randomUUID } from 'node:crypto';
 import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { newsRetentionCutoff } from '@/lib/db/retention';
 import type { Article, ArticleQuery } from '@/lib/types/article';
 import type { ValidatedNewArticle } from '@/lib/validation/article';
 import type {
@@ -70,7 +71,10 @@ export function createLocalRepository(): ArticleRepository {
     async list(query: ArticleQuery): Promise<ListResult> {
       const all = await readArticles();
 
+      const cutoff = newsRetentionCutoff().getTime();
+
       const filtered = all.filter((article) => {
+        if (new Date(article.publishedAt).getTime() < cutoff) return false;
         if (query.category !== 'all' && article.category !== query.category) {
           return false;
         }
@@ -125,7 +129,9 @@ export function createLocalRepository(): ArticleRepository {
       const all = await readArticles();
       return all
         .filter((article) => new Date(article.publishedAt).getTime() >= since)
-        .map((article) => ({
+          .map((article) => ({
+            title: article.title,
+            description: article.description,
           articleUrl: article.articleUrl,
           normalizedTitle: article.normalizedTitle,
           sourceName: article.sourceName,
@@ -195,6 +201,20 @@ export function createLocalRepository(): ArticleRepository {
 
     async count(): Promise<number> {
       return (await readArticles()).length;
+    },
+
+    async deletePublishedBefore(cutoffIso: string): Promise<number> {
+      const cutoff = new Date(cutoffIso).getTime();
+      if (!Number.isFinite(cutoff)) throw new Error('Invalid retention cutoff');
+      return serialize(async () => {
+        const articles = await readArticles();
+        const retained = articles.filter(
+          (article) => new Date(article.publishedAt).getTime() >= cutoff,
+        );
+        const deleted = articles.length - retained.length;
+        if (deleted > 0) await writeJson(ARTICLES_FILE, retained);
+        return deleted;
+      });
     },
 
     async deleteAll(): Promise<void> {

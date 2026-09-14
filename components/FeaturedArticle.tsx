@@ -8,31 +8,31 @@ import { formatAbsoluteDate, formatRelativeDate } from '@/lib/utils/format';
 
 export function FeaturedArticle({ article }: { article: Article }) {
   return (
-    <section aria-labelledby="featured-heading" className="mb-10">
+    <section aria-labelledby="featured-heading" className="min-w-0">
       <h2
         id="featured-heading"
-        className="mb-3 text-xs font-bold uppercase tracking-widest text-accent"
+        className="section-eyebrow mb-4"
       >
-        Featured story
+        In the spotlight
       </h2>
 
       <article
         id={`article-${article.id}`}
         tabIndex={-1}
-        className="grid overflow-hidden border border-border bg-surface md:grid-cols-2">
-        <div className="relative aspect-[16/9] w-full md:aspect-auto md:h-full md:min-h-64">
+        className="group grid overflow-hidden rounded-xl border border-border bg-surface md:grid-cols-[0.95fr_1.05fr]">
+        <div className="relative aspect-[16/10] w-full overflow-hidden md:aspect-auto md:h-full md:min-h-[360px]">
           <ArticleImage
             src={article.imageUrl}
             alt={article.title}
             seed={article.id}
-            className="h-full w-full"
+            className="h-full w-full transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>
 
-        <div className="flex flex-col gap-4 p-5 sm:p-7">
+        <div className="flex flex-col gap-4 p-6 sm:p-7">
           <div className="flex flex-wrap items-center gap-3">
             <CategoryBadge slug={article.category} />
-            <span className="text-xs uppercase tracking-wide text-fg-muted">
+            <span className="text-xs text-fg-muted">
               <span className="font-bold text-fg">{article.sourceName}</span>
               <span aria-hidden="true"> · </span>
               <time dateTime={article.publishedAt}>
@@ -44,8 +44,8 @@ export function FeaturedArticle({ article }: { article: Article }) {
             </span>
           </div>
 
-          <h3 className="text-2xl font-extrabold leading-tight tracking-tight text-fg sm:text-3xl">
-            {article.title}
+          <h3 className="text-[28px] font-bold leading-[1.16] tracking-tight text-fg sm:text-4xl 2xl:text-[44px]">
+            <a href={article.articleUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent">{article.title}</a>
           </h3>
 
           {article.description && (
@@ -59,7 +59,7 @@ export function FeaturedArticle({ article }: { article: Article }) {
               href={article.articleUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-10 items-center gap-2 rounded-none bg-fg px-4 text-sm font-bold uppercase tracking-wide text-bg transition-colors hover:bg-accent hover:text-accent-fg"
+              className="inline-flex h-11 items-center gap-2 rounded-lg bg-accent px-4 text-sm font-semibold text-accent-fg transition-colors hover:bg-accent/85"
             >
               Read full story
               <span className="sr-only"> at {article.sourceName}</span>
