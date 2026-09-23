@@ -1,11 +1,11 @@
-# AI Pulse
+# aidisha.pulse
 
 A proof-of-concept news aggregator for artificial intelligence and startup
 stories. It collects headlines from the GNews API on a schedule, categorises and
 deduplicates them, and shows them as responsive cards that link out to the
 original publisher.
 
-**AI Pulse does not host or republish articles.** It stores only metadata —
+**aidisha.pulse does not host or republish articles.** It stores only metadata —
 headline, short description, publisher, publication date, an image URL where the
 provider permits it, and the original link.
 
@@ -65,7 +65,7 @@ npm run dev                    # http://localhost:3000
 ```
 
 That is enough to see the whole application working. With no Supabase
-credentials set, AI Pulse automatically uses the local JSON store at
+credentials set, aidisha.pulse automatically uses the local JSON store at
 `.data/articles.json`, so nothing needs provisioning.
 
 `npm run db:seed -- --reset` clears the store before seeding.

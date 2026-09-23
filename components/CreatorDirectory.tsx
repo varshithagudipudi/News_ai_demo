@@ -7,6 +7,7 @@ import { CreatorFilters } from '@/components/CreatorFilters';
 import { CreatorProfileDialog } from '@/components/CreatorProfileDialog';
 import { EmptyState } from '@/components/states/EmptyState';
 import { useSavedCreators } from '@/lib/hooks/useSavedCreators';
+import { siteConfig } from '@/lib/config/site';
 import {
   contentFormats, creatorProfiles, directoryTopics, emptyDirectoryFilters,
   filterCreatorProfiles, profileTypes, type CreatorProfile, type DirectoryFilters,
@@ -59,7 +60,7 @@ export function CreatorDirectory() {
     <section id="creator-directory" aria-labelledby="creators-heading" className="px-4 pb-16 pt-6 sm:px-6">
       <div className="creator-hero">
         <div className="relative z-10 min-w-0">
-          <p className="section-eyebrow mb-4 flex items-center gap-2"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent" />The AI Pulse creator directory</p>
+          <p className="section-eyebrow mb-4 flex items-center gap-2"><span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-accent" />The {siteConfig.name} creator directory</p>
           <h1 id="creators-heading" className="max-w-3xl text-[34px] font-bold leading-[1.08] tracking-[-0.045em] text-fg sm:text-[44px] xl:text-[52px]">
             Find your next<br /><span className="text-accent">AI obsession.</span>
           </h1>

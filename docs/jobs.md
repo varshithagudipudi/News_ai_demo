@@ -1,4 +1,4 @@
-# Live AI Pulse Jobs
+# Live aidisha.pulse Jobs
 
 Jobs now come from public employer APIs, not the former hand-maintained sample catalog.
 

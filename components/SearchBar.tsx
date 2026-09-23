@@ -3,6 +3,7 @@
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { updateFeedLocation } from '@/lib/utils/feedNavigation';
+import { siteConfig } from '@/lib/config/site';
 import { constrainPanel, defaultPanelPreferences, getSearchFeedback, getServerSearchFeedback, OPEN_SEARCH_EVENT, readPanelPreferences, SEARCH_PANEL_STORAGE, subscribeSearchFeedback, type PanelPreferences } from '@/lib/utils/searchPanel';
 
 const quickSearches = ['AI agents', 'New models', 'Research'];
@@ -154,12 +155,12 @@ export function SearchBar() {
             }}><Icon name="grip" /></button>
           <span id="search-move-help" className="sr-only">Drag to move. Use arrow keys to move 10 pixels, Shift and arrow keys for 40 pixels, or Home to reset.</span>
           {minimized ? <button ref={restoreRef} type="button" className="search-dock-restore" aria-label="Expand search" onClick={() => { setPreferences(previous => ({ ...previous, mode: 'expanded' })); setFocusRequest(previous => previous + 1); }}><Icon name="search" /> Search news</button>
-            : <span className="search-dock-title">Search AI Pulse</span>}
+            : <span className="search-dock-title">Search {siteConfig.name}</span>}
           <button type="button" className="search-dock-control" onClick={resetPosition} aria-label="Reset position" title="Reset position"><Icon name="reset" /></button>
           {!minimized && <button type="button" className="search-dock-control" aria-label="Minimize search" title="Minimize search" onClick={() => { setPreferences(previous => ({ ...previous, mode: 'minimized' })); setFocused(false); requestAnimationFrame(() => restoreRef.current?.focus({ preventScroll: true })); }}><Icon name="minus" /></button>}
           <button type="button" className="search-dock-control" aria-label="Hide search" title="Hide search · reopen from the header" onClick={hide}><Icon name="close" /></button>
         </div>
-        {!minimized && <form role="search" aria-label="Search AI Pulse news" className="search-dock-body" onSubmit={event => { event.preventDefault(); search(value); }}>
+        {!minimized && <form role="search" aria-label={`Search ${siteConfig.name} news`} className="search-dock-body" onSubmit={event => { event.preventDefault(); search(value); }}>
           <div className="search-dock-input">
             <span className="ml-2 flex text-accent"><Icon name="search" /></span>
             <label htmlFor="site-search" className="sr-only">Search AI news</label>

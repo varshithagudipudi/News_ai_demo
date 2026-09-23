@@ -99,7 +99,7 @@ export function Footer() {
           <p>Your saved stories stay in your browser.</p>
         </div>
 
-        <div aria-hidden="true" className="footer-wordmark select-none py-8 text-center font-bold uppercase sm:py-12">
+        <div aria-hidden="true" className="footer-wordmark select-none py-8 text-center font-bold sm:py-12">
           {siteConfig.name}
         </div>
 
@@ -107,7 +107,7 @@ export function Footer() {
           <p className="text-sm text-fg-muted">
             {siteConfig.name} &copy; Copyright {new Date().getFullYear()}.
           </p>
-          <div role="group" aria-label="AI Pulse around the web" className="flex items-center gap-3">
+          <div role="group" aria-label={`${siteConfig.name} around the web`} className="flex items-center gap-3">
             {socialLinks.map((social) => {
               const icon = (
                 <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5">
@@ -138,7 +138,7 @@ export function Footer() {
                 </span>
               );
             })}
-            <Link href="/" aria-label="AI Pulse homepage" className="footer-social-link">
+            <Link href="/" aria-label={`${siteConfig.name} homepage`} className="footer-social-link">
               <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" className="h-5 w-5">
                 <circle cx="12" cy="12" r="9" />
                 <ellipse cx="12" cy="12" rx="4" ry="9" />

@@ -314,7 +314,7 @@
     background-image: linear-gradient(to bottom, rgb(var(--color-accent) / 0.14) 10%, rgb(var(--color-accent) / 0.025) 95%);
     background-clip: text;
     -webkit-background-clip: text;
-    font-size: clamp(3rem, 19vw, 26rem);
+    font-size: clamp(2rem, 14vw, 12rem);
     line-height: 1.05;
     letter-spacing: -0.065em;
     white-space: nowrap;

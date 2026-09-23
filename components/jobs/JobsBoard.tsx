@@ -5,6 +5,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { JobSaveButton } from '@/components/jobs/JobSaveButton';
 import { useSavedJobs } from '@/lib/hooks/useSavedJobs';
+import { siteConfig } from '@/lib/config/site';
 import { filterJobs, jobLocation, jobSections, jobStatus, readJobFilters } from '@/lib/jobs/catalog';
 import { JOB_REFRESH_MS, type LiveJobsResponse } from '@/lib/jobs/sources';
 
@@ -77,7 +78,7 @@ export function JobsBoard({ initialData }: { initialData: LiveJobsResponse }) {
   return <section id="jobs-board" aria-labelledby="jobs-heading" className="px-4 pb-16 pt-6 sm:px-6">
     <div className="jobs-hero">
       <div className="relative min-w-0">
-        <p className="section-eyebrow mb-3">AI Pulse · Careers & opportunities</p>
+        <p className="section-eyebrow mb-3">{siteConfig.name} · Careers & opportunities</p>
         <h1 id="jobs-heading" className="text-[32px] font-bold leading-[1.12] tracking-[-0.04em] text-fg sm:text-[44px]">Your next chapter.<br className="sm:hidden" /> <span className="text-accent">Powered by AI.</span></h1>
         <p className="mt-3 max-w-2xl text-sm leading-relaxed text-fg-muted sm:text-base">Find a place to learn, build, and make an impact. Explore AI opportunities by country and the way you want to work.</p>
       </div>
