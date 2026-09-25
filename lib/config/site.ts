@@ -2,7 +2,7 @@
  * Single source of truth for product identity. Change the name here only.
  */
 export const siteConfig = {
-  name: 'aidisha.pulse',
+  name: 'AIDISHA.PULSE',
   tagline: 'AI and startup news, collected automatically.',
   description:
     'aidisha.pulse collects artificial intelligence and startup headlines from across the web and links you straight to the original publisher.',

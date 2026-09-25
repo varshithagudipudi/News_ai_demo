@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { ArticleGrid } from '@/components/ArticleGrid';
+import { BlogPromotion } from '@/components/BlogPromotion';
 import { CategoryNav } from '@/components/CategoryNav';
 import { CreatorDirectory } from '@/components/CreatorDirectory';
 import { FeaturedArticle } from '@/components/FeaturedArticle';
@@ -15,6 +16,7 @@ import { ErrorState } from '@/components/states/ErrorState';
 import { SkeletonGrid } from '@/components/states/SkeletonGrid';
 import { getCategoryName } from '@/lib/config/categories';
 import { siteConfig } from '@/lib/config/site';
+import { blogPromotion } from '@/lib/config/blogPromotion';
 import { NewsTicker } from '@/components/NewsTicker';
 import { updateFeedLocation } from '@/lib/utils/feedNavigation';
 import { publishSearchFeedback } from '@/lib/utils/searchPanel';
@@ -165,6 +167,7 @@ export function HomeView() {
     : articles;
 
   const hasFilters = category !== 'all' || search !== '' || sort !== 'newest';
+  const showBlogPromotion = blogPromotion.enabled && category === 'all' && search === '' && page === 1;
 
   const headingText = displayed.search
     ? `Results for “${displayed.search}”`
@@ -226,11 +229,13 @@ export function HomeView() {
 
         <div aria-busy={status === 'loading'}>
           {featured && (
-            <div className={`mb-10 grid items-start gap-6 ${gridArticles.length > 0 ? 'xl:grid-cols-[minmax(0,1fr)_310px]' : ''}`}>
+            <div className={`mb-10 grid items-start gap-6 ${showBlogPromotion ? 'xl:grid-cols-[minmax(0,1fr)_300px]' : gridArticles.length > 0 ? 'xl:grid-cols-[minmax(0,1fr)_310px]' : ''}`}>
               <FeaturedArticle article={featured} />
-              {gridArticles.length > 0 && <NewsBriefing articles={gridArticles} />}
+              {showBlogPromotion ? <BlogPromotion /> : gridArticles.length > 0 && <NewsBriefing articles={gridArticles} />}
             </div>
           )}
+
+          {showBlogPromotion && !featured && <div className="mb-10"><BlogPromotion /></div>}
 
           <section aria-labelledby="results-heading">
             <div className="mb-6 flex flex-wrap items-center justify-between gap-3 border-b border-border pb-4">
